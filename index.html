@@ -134,24 +134,28 @@
             </button>
             <div class="collapse navbar-collapse" id="nav">
                 <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
-                    <li class="nav-item"><a class="nav-link active" href="index.html"><i class="fa-solid fa-house-chimney me-1 d-lg-none"></i>Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Transportation Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="markets.html">Markets We Serve</a></li>
-                    <li class="nav-item"><a class="nav-link" href="gallery.html">Fleet Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html"><i class="fa-solid fa-house-chimney me-2 text-primary d-lg-none"></i>Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html"><i class="fa-solid fa-building me-2 text-primary d-lg-none"></i>About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html"><i class="fa-solid fa-truck-fast me-2 text-primary d-lg-none"></i>Transportation Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="markets.html"><i class="fa-solid fa-route me-2 text-primary d-lg-none"></i>Markets We Serve</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html"><i class="fa-solid fa-images me-2 text-primary d-lg-none"></i>Fleet Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html"><i class="fa-solid fa-headset me-2 text-primary d-lg-none"></i>Contact Us</a></li>
                     <li class="nav-item nav-item-btn ms-lg-2 mt-2 mt-lg-0">
                         <button class="btn btn-tps btn-sm px-3" data-bs-toggle="modal" data-bs-target="#enquiryModal">
                             <i class="fa-solid fa-paper-plane me-1"></i> Send Enquiry
                         </button>
                     </li>
                 </ul>
+                <div class="d-lg-none mobile-nav-contact">
+                    <a href="tel:+919742210284" class="btn btn-outline-primary"><i class="fa-solid fa-phone me-1"></i> Call Desk</a>
+                    <a href="https://api.whatsapp.com/send?phone=919742210284&text=Hello%21+I+found+your+website+and+am+interested+in+your+cold+chain+truck+services." target="_blank" class="btn btn-outline-success"><i class="fa-brands fa-whatsapp me-1"></i> WhatsApp</a>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Carousel with Authentic Truck Banner Photos -->
-    <section id="hero" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2000">
+    <section id="hero" class="carousel slide " data-bs-ride="carousel" data-bs-interval="2000">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#hero" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#hero" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -591,10 +595,13 @@
         </div>
     </section>
 
-    <!-- "Why Partner With Us" Section (Tasteful 3D Cards) -->
-    <section class="why-partner-section">
+    <!-- "Why Partner With Us" Section (Upgraded Modern Design) -->
+    <section class="why-partner-section" id="whyPartner">
         <div class="container">
             <div class="sec-head">
+                <div class="why-partner-pill-badge mb-2">
+                    <i class="fa-solid fa-handshake-angle me-1"></i> Why Partner With TPS
+                </div>
                 <h2>Setting The Benchmark in Cold Chain Transport</h2>
                 <p>Engineered for precision temperature integrity, punctual schedules, and direct logistics accountability.</p>
             </div>
@@ -602,8 +609,9 @@
                 <!-- Card 1 -->
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="why-partner-card">
+                        <span class="why-partner-step">01</span>
                         <div class="why-partner-icon blue">
-                            <i class="fa-solid fa-clock"></i>
+                            <i class="fa-solid fa-clock-rotate-left"></i>
                         </div>
                         <h5>Punctual & Safe Delivery</h5>
                         <p>Strict route planning and dual-driver protocols guarantee consignments arrive on time with zero temperature disruptions.</p>
@@ -613,6 +621,7 @@
                 <!-- Card 2 -->
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="why-partner-card">
+                        <span class="why-partner-step">02</span>
                         <div class="why-partner-icon green">
                             <i class="fa-solid fa-indian-rupee-sign"></i>
                         </div>
@@ -624,6 +633,7 @@
                 <!-- Card 3 -->
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="why-partner-card">
+                        <span class="why-partner-step">03</span>
                         <div class="why-partner-icon cyan">
                             <i class="fa-solid fa-headset"></i>
                         </div>
@@ -635,12 +645,43 @@
                 <!-- Card 4 -->
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="why-partner-card">
+                        <span class="why-partner-step">04</span>
                         <div class="why-partner-icon purple">
                             <i class="fa-solid fa-network-wired"></i>
                         </div>
                         <h5>Pan-India Network</h5>
                         <p>Expansive cold chain freight corridors linking Bangalore, Chennai, Hyderabad, Mumbai, Delhi, and key agricultural belts.</p>
                         <span class="why-partner-badge purple"><i class="fa-solid fa-circle-check"></i> National Reach</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Partner Guarantees & Credentials Strip -->
+            <div class="why-partner-trust-strip mt-5">
+                <div class="row g-3 align-items-center justify-content-center text-center">
+                    <div class="col-6 col-md-3">
+                        <div class="trust-pill-item">
+                            <i class="fa-solid fa-certificate text-primary"></i>
+                            <span>FSSAI & GDP Compliant</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="trust-pill-item">
+                            <i class="fa-solid fa-snowflake text-info"></i>
+                            <span>-25°C to +25°C Control</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="trust-pill-item">
+                            <i class="fa-solid fa-satellite-dish text-success"></i>
+                            <span>24/7 GPS & Thermal IoT</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="trust-pill-item">
+                            <i class="fa-solid fa-truck-fast text-primary"></i>
+                            <span>Sanitized Cold Reefer</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -726,14 +767,14 @@
 
             <hr class="border-secondary opacity-25 my-4">
 
-            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 small">
-                <p class="mb-0">© <span id="yr">2026</span> <strong>Total Procurement Solutions</strong>. All rights reserved.</p>
-                <div class="d-flex gap-3">
-                    <a href="about.html">Privacy Policy</a>
-                    <span>•</span>
-                    <a href="about.html">Terms of Service</a>
-                    <span>•</span>
-                    <a href="contact.html">Sitemap</a>
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 small footer-bottom-bar">
+                <p class="mb-0 copyright-text">© <span id="yr">2026</span> <strong>Total Procurement Solutions</strong>. All rights reserved.</p>
+                <div class="d-flex gap-3 footer-legal-links">
+                    <a href="about.html" class="legal-link">Privacy Policy</a>
+                    <span class="legal-sep">•</span>
+                    <a href="about.html" class="legal-link">Terms of Service</a>
+                    <span class="legal-sep">•</span>
+                    <a href="contact.html" class="legal-link">Sitemap</a>
                 </div>
             </div>
         </div>

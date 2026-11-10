@@ -1,43 +1,51 @@
 /* ==========================================================================
    Total Procurement Solutions (TPS) - Main Stylesheet
-   Tasteful 3D Effects, Brand Logo Color Harmony (Royal Ice Blue & Electric Lime),
-   Guaranteed High-Contrast Visibility, Compact Spacing & Full Mobile Responsiveness
+   Modern High-End Cold-Chain Logistics Design System
+   Brand Logo Color Harmony (Royal Ice Blue & Electric Lime),
+   Guaranteed High-Contrast Visibility, Crisp Typography & Ultra-Attractive Responsive UI
    ========================================================================== */
 
 :root {
     /* Brand Theme Colors matched directly from TPS 3D Logo */
     --primary: #0070d8;              /* Royal Ice Blue from TPS logo text & snowflake */
-    --primary-dark: #0050a8;         /* Deep royal blue */
+    --primary-dark: #004ba3;         /* Deep royal blue */
     --primary-light: #29a8ff;        /* Vibrant ice blue */
     --primary-glow: rgba(0, 112, 216, 0.35);
 
     --accent: #4cb814;               /* Electric Lime Green from 'tp' and 's' letterforms */
     --accent-bright: #62d820;        /* Vivid lime highlight */
     --accent-dark: #378f0b;          /* Embossed 3D bevel bottom */
-    --accent-glow: rgba(76, 184, 20, 0.35);
+    --accent-glow: rgba(76, 184, 20, 0.4);
 
     --secondary: #0a2540;            /* Deep navy for prominent typography */
-    --secondary-dark: #071526;       /* Midnight marine for topbar and dark 3D hub */
+    --secondary-dark: #061628;       /* Midnight marine for topbar and dark hub */
 
-    --ice: #f2f8fc;                  /* Clean subtle cold-chain ice background */
-    --ice-border: #d2e4f3;           /* Crisp cold-chain border */
-    --dark: #061220;
+    --ice: #f4f9fd;                  /* Clean subtle cold-chain ice background */
+    --ice-border: #d7e7f5;           /* Crisp cold-chain border */
+    --dark: #041426;
 
-    --body-text: #2d3748;            /* High-contrast dark charcoal text */
+    --body-text: #1e293b;            /* High-contrast dark charcoal text */
     --muted-text: #475569;           /* High-contrast slate */
     --card-bg: #ffffff;
-    --border-color: #dbe5ee;
+    --border-color: #e2eaf2;
 
-    /* 3D Elevation & Lighting Shadows */
-    --shadow-3d-sm: 0 4px 10px rgba(10, 37, 64, 0.06), 0 1px 3px rgba(10, 37, 64, 0.04);
-    --shadow-3d-md: 0 10px 25px -4px rgba(10, 37, 64, 0.08), 0 4px 10px -2px rgba(10, 37, 64, 0.04);
-    --shadow-3d-lg: 0 20px 35px -5px rgba(10, 37, 64, 0.12), 0 8px 16px -4px rgba(10, 37, 64, 0.06);
-    --shadow-3d-glow: 0 0 20px rgba(76, 184, 20, 0.28);
+    /* Modern Multi-Layer Elevation & Lighting Shadows */
+    --shadow-sm: 0 2px 8px rgba(10, 37, 64, 0.05);
+    --shadow-md: 0 8px 24px -4px rgba(10, 37, 64, 0.08), 0 2px 6px -1px rgba(10, 37, 64, 0.04);
+    --shadow-lg: 0 20px 40px -8px rgba(10, 37, 64, 0.12), 0 4px 12px -2px rgba(10, 37, 64, 0.05);
+    --shadow-hover: 0 22px 45px -8px rgba(0, 112, 216, 0.22), 0 8px 20px -4px rgba(10, 37, 64, 0.08);
+    --shadow-glow: 0 0 24px rgba(76, 184, 20, 0.35);
+
+    /* Backwards compatibility aliases */
+    --shadow-3d-sm: 0 4px 12px rgba(10, 37, 64, 0.06);
+    --shadow-3d-md: 0 10px 28px -4px rgba(10, 37, 64, 0.09);
+    --shadow-3d-lg: 0 20px 40px -6px rgba(0, 112, 216, 0.18);
+    --shadow-3d-glow: 0 0 22px rgba(76, 184, 20, 0.32);
 
     --radius-sm: 8px;
-    --radius-md: 14px;
-    --radius-lg: 20px;
-    --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Global Resets & Typography */
@@ -55,12 +63,15 @@ body {
     max-width: 100%;
     overflow-x: clip;
     position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
     color: var(--secondary);
     font-weight: 800;
     line-height: 1.25;
+    letter-spacing: -0.02em;
 }
 
 a {
@@ -90,34 +101,37 @@ img {
    Top Bar
    -------------------------------------------------------------------------- */
 .topbar {
-    background: linear-gradient(90deg, #003e80 0%, #0059b8 50%, #003e80 100%);
-    color: #e0eeff;
+    background: linear-gradient(90deg, #004da3 0%, #0070d8 50%, #004da3 100%);
+    color: #ffffff;
     font-size: 13px;
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.22);
 }
 
 .topbar a {
-    color: #cfe0f5;
+    color: #ffffff;
     transition: var(--transition);
+    text-decoration: none;
+    font-weight: 500;
 }
 
 .topbar a:hover {
     color: #ffffff;
-    text-decoration: underline;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.85);
 }
 
 .topbar .badge-live {
-    background: rgba(76, 184, 20, 0.2);
-    color: #4cb814;
+    background: rgba(76, 184, 20, 0.18);
+    color: #5edb24;
     border: 1px solid rgba(76, 184, 20, 0.45);
     font-size: 11px;
-    padding: 3px 9px;
+    padding: 3px 10px;
     border-radius: 20px;
     font-weight: 700;
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .topbar .badge-live .dot {
@@ -135,7 +149,7 @@ img {
 }
 
 /* --------------------------------------------------------------------------
-   Navbar - Sticky on all responsive views with 3D glass effect
+   Navbar - Sticky on all responsive views with Glassmorphism
    -------------------------------------------------------------------------- */
 .navbar.sticky-top {
     position: -webkit-sticky !important;
@@ -143,16 +157,19 @@ img {
     top: 0 !important;
     z-index: 1030 !important;
     width: 100% !important;
-    background: #ffffff !important;
-    padding: 10px 0;
-    box-shadow: 0 4px 18px rgba(10, 37, 64, 0.07);
-    transition: box-shadow 0.25s ease, background-color 0.25s ease;
+    background: rgba(255, 255, 255, 0.96) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0, 112, 216, 0.08);
+    box-shadow: 0 4px 20px rgba(10, 37, 64, 0.06);
+    transition: var(--transition);
 }
 
 .navbar.sticky-top.navbar-scrolled {
-    box-shadow: 0 6px 24px rgba(10, 37, 64, 0.13) !important;
+    box-shadow: 0 8px 30px rgba(10, 37, 64, 0.12) !important;
     background: rgba(255, 255, 255, 0.98) !important;
-    backdrop-filter: blur(10px);
+    padding: 9px 0;
 }
 
 .navbar-brand {
@@ -166,7 +183,7 @@ img {
     height: 52px;
     width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.08));
     transition: transform 0.2s ease;
 }
 
@@ -176,35 +193,58 @@ img {
 
 .navbar .nav-link {
     font-weight: 600;
-    font-size: 15px;
+    font-size: 14.5px;
     color: var(--secondary);
     padding: 8px 14px !important;
-    border-radius: 8px;
+    border-radius: 10px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.navbar .nav-link:hover {
+    color: var(--primary) !important;
+    background-color: var(--ice);
+    transform: translateY(-1px);
+}
+
+.navbar .nav-link.active {
+    color: var(--primary) !important;
+    background: linear-gradient(135deg, rgba(0, 112, 216, 0.09) 0%, rgba(76, 184, 20, 0.06) 100%);
+    font-weight: 700;
+}
+
+/* Modern Hamburger Toggle Button */
+.navbar-toggler {
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 112, 216, 0.25) !important;
+    background: rgba(0, 112, 216, 0.06) !important;
     transition: var(--transition);
 }
 
-.navbar .nav-link:hover,
-.navbar .nav-link.active {
-    color: var(--primary) !important;
-    background-color: var(--ice);
+.navbar-toggler:hover,
+.navbar-toggler:focus {
+    background: rgba(0, 112, 216, 0.12) !important;
+    box-shadow: 0 0 0 3px rgba(0, 112, 216, 0.18) !important;
 }
 
 /* --------------------------------------------------------------------------
-   3D Tactile Buttons (Embossed & Tasteful Depth matching TPS Logo)
+   Tactile & Modern Action Buttons
    -------------------------------------------------------------------------- */
 .btn-tps {
     background: linear-gradient(180deg, #5ec926 0%, #43b310 100%);
     color: #ffffff !important;
     font-weight: 700;
     font-size: 14.5px;
-    padding: 9px 20px;
+    padding: 10px 22px;
     border-radius: var(--radius-sm);
     border: 1px solid #369c09;
     border-bottom: 3px solid #2b8006;
-    box-shadow: 0 4px 12px rgba(67, 179, 16, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.35);
-    transition: all 0.18s ease-in-out;
+    box-shadow: 0 4px 14px rgba(67, 179, 16, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
     cursor: pointer;
@@ -213,7 +253,7 @@ img {
 .btn-tps:hover {
     background: linear-gradient(180deg, #68d62c 0%, #48c012 100%);
     transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(67, 179, 16, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    box-shadow: 0 8px 22px rgba(67, 179, 16, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.45);
 }
 
 .btn-tps:active {
@@ -228,12 +268,13 @@ img {
     border: 2px solid var(--primary);
     font-weight: 700;
     font-size: 14.5px;
-    padding: 8px 18px;
+    padding: 9px 20px;
     border-radius: var(--radius-sm);
-    box-shadow: 0 3px 8px rgba(0, 112, 216, 0.12);
+    box-shadow: 0 3px 10px rgba(0, 112, 216, 0.12);
     transition: var(--transition);
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     cursor: pointer;
 }
@@ -242,27 +283,35 @@ img {
     background: var(--primary);
     color: #ffffff !important;
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 112, 216, 0.28);
+    box-shadow: 0 6px 20px rgba(0, 112, 216, 0.28);
 }
 
 /* --------------------------------------------------------------------------
    Page Header / Breadcrumb Hero
    -------------------------------------------------------------------------- */
 .page-hero {
-    background: linear-gradient(135deg, #004593 0%, #0070d8 55%, #1ba0fc 100%);
+    background: linear-gradient(135deg, #003e82 0%, #0070d8 55%, #1ba0fc 100%);
     color: #ffffff;
-    padding: 42px 0;
+    padding: 48px 0;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 18px rgba(0, 112, 216, 0.18);
+    box-shadow: 0 6px 24px rgba(0, 112, 216, 0.2);
+}
+
+.page-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
+    pointer-events: none;
 }
 
 .page-hero h1 {
     color: #ffffff;
-    font-size: clamp(26px, 3.8vw, 38px);
+    font-size: clamp(26px, 3.8vw, 40px);
     font-weight: 800;
-    margin-bottom: 6px;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 8px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
 .page-hero .breadcrumb {
@@ -271,11 +320,13 @@ img {
 }
 
 .page-hero a {
-    color: #aed1fc;
+    color: #c4e0ff;
+    text-decoration: none;
 }
 
 .page-hero a:hover {
     color: #ffffff;
+    text-decoration: underline;
 }
 
 .breadcrumb-item.active {
@@ -284,103 +335,116 @@ img {
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.5);
 }
 
 /* --------------------------------------------------------------------------
-   Sections & Headings - Compact Spacing as requested
+   Sections & Headings - Balanced Spacing & Visual Rhythm
    -------------------------------------------------------------------------- */
 .sec {
-    padding: 42px 0;
+    padding: 52px 0;
     position: relative;
     background: #ffffff !important;
-    color: #2d3748 !important;
+    color: var(--body-text) !important;
 }
 
 .sec.alt {
-    padding: 42px 0;
+    padding: 52px 0;
     background: var(--ice) !important;
     border-top: 1px solid var(--ice-border);
     border-bottom: 1px solid var(--ice-border);
-    color: #2d3748 !important;
+    color: var(--body-text) !important;
 }
 
 .sec-head {
     text-align: center;
-    max-width: 760px;
-    margin: 0 auto 24px auto;
+    max-width: 780px;
+    margin: 0 auto 32px auto;
 }
 
 .sec-head h2 {
-    font-size: clamp(24px, 3.2vw, 34px);
+    font-size: clamp(24px, 3.2vw, 36px);
     font-weight: 800;
     color: var(--secondary) !important;
-    margin-bottom: 8px;
-    letter-spacing: -0.3px;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
 }
 
 .sec-head p {
     font-size: 16px;
     color: var(--muted-text) !important;
     margin: 0;
-    line-height: 1.55;
+    line-height: 1.6;
 }
 
 /* --------------------------------------------------------------------------
-   Stats Strip
+   Stats Strip - Elevated Modern Glass Cards
    -------------------------------------------------------------------------- */
 .stats-strip {
-    background: linear-gradient(135deg, #0050a8 0%, #0070d8 50%, #004593 100%);
+    background: linear-gradient(135deg, #003c7d 0%, #005bb5 50%, #003c7d 100%);
     color: #ffffff;
-    padding: 28px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 6px 20px rgba(0, 112, 216, 0.2);
+    padding: 34px 0;
+    border-top: 1px solid rgba(41, 168, 255, 0.4);
+    border-bottom: 1px solid rgba(76, 184, 20, 0.4);
+    box-shadow: 0 8px 25px rgba(0, 112, 216, 0.22);
+    position: relative;
+    overflow: hidden;
 }
 
 .stat-box {
-    padding: 10px;
-    border-radius: var(--radius-sm);
+    padding: 16px 12px;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     transition: var(--transition);
+}
+
+.stat-box:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.13);
+    border-color: rgba(255, 255, 255, 0.32);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .stat-box b {
     display: block;
-    font-size: clamp(26px, 3.2vw, 36px);
-    font-weight: 800;
+    font-size: clamp(28px, 3.4vw, 40px);
+    font-weight: 900;
     color: #ffffff;
     line-height: 1.1;
     margin-bottom: 4px;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
 .stat-box b span.accent-text {
-    color: var(--accent);
+    color: var(--accent-bright);
 }
 
 .stat-box span.stat-label {
-    color: #cfe2f7;
-    font-size: 13px;
+    color: #d6e8fc;
+    font-size: 12.5px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.8px;
 }
 
 /* --------------------------------------------------------------------------
-   Cards & Service Items - Guaranteed 100% High-Contrast Visibility & 3D Depth
+   Cards & Service Items - Modern High-Contrast & Interactive Elevation
    -------------------------------------------------------------------------- */
 .card-s {
     background: #ffffff !important;
     border: 1px solid var(--border-color) !important;
     border-radius: var(--radius-md);
-    padding: 24px 20px;
+    padding: 26px 22px;
     transition: var(--transition);
     display: flex;
     flex-direction: column;
     height: 100%;
     position: relative;
     overflow: hidden;
-    box-shadow: var(--shadow-3d-md) !important;
+    box-shadow: var(--shadow-md) !important;
     opacity: 1 !important;
     visibility: visible !important;
 }
@@ -393,39 +457,43 @@ img {
     right: 0;
     height: 4px;
     background: linear-gradient(90deg, var(--primary), var(--accent));
-    opacity: 1;
+    transition: height 0.25s ease;
 }
 
 .card-s:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-3d-lg) !important;
-    border-color: var(--primary-light) !important;
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover) !important;
+    border-color: #a4d2fb !important;
+}
+
+.card-s:hover::before {
+    height: 6px;
 }
 
 .card-s .ico {
-    width: 56px;
-    height: 56px;
+    width: 58px;
+    height: 58px;
     border-radius: 14px;
-    background: #e8f4fd;
+    background: linear-gradient(135deg, #e8f4fd 0%, #d5eafc 100%);
     color: var(--primary);
     display: grid;
     place-items: center;
     font-size: 24px;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
     border: 1px solid rgba(0, 112, 216, 0.2);
-    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.8), 0 3px 8px rgba(0, 112, 216, 0.12);
+    box-shadow: 0 4px 12px rgba(0, 112, 216, 0.12);
     transition: var(--transition);
 }
 
 .card-s:hover .ico {
     background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     color: #ffffff;
-    transform: scale(1.06);
-    box-shadow: 0 6px 14px rgba(0, 112, 216, 0.3);
+    transform: scale(1.08) rotate(2deg);
+    box-shadow: 0 8px 18px rgba(0, 112, 216, 0.35);
 }
 
 .card-s h5 {
-    font-size: 18.5px;
+    font-size: 19px;
     font-weight: 800;
     color: var(--secondary) !important;
     margin-bottom: 8px;
@@ -434,8 +502,8 @@ img {
 .card-s p {
     color: var(--muted-text) !important;
     font-size: 14.5px;
-    line-height: 1.55;
-    margin-bottom: 14px;
+    line-height: 1.6;
+    margin-bottom: 16px;
     flex-grow: 1;
 }
 
@@ -445,16 +513,17 @@ img {
     gap: 6px;
     font-size: 12px;
     font-weight: 700;
-    background: #e6f7ec;
-    color: #278809;
-    border: 1px solid #c2eecf;
-    padding: 4px 10px;
-    border-radius: 12px;
+    background: linear-gradient(135deg, #e8f8ec 0%, #d6f5dc 100%);
+    color: #268007;
+    border: 1px solid #b7edc5;
+    padding: 5px 12px;
+    border-radius: 20px;
     width: fit-content;
+    box-shadow: 0 2px 6px rgba(76, 184, 20, 0.12);
 }
 
 /* --------------------------------------------------------------------------
-   Truck Fleet Showcase Cards - 100% Guaranteed Image & Text Visibility
+   Truck Fleet Showcase Cards
    -------------------------------------------------------------------------- */
 .truck-card {
     background: #ffffff !important;
@@ -465,20 +534,20 @@ img {
     height: 100%;
     display: flex;
     flex-direction: column;
-    box-shadow: var(--shadow-3d-md) !important;
+    box-shadow: var(--shadow-md) !important;
     opacity: 1 !important;
     visibility: visible !important;
 }
 
 .truck-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-3d-lg) !important;
-    border-color: var(--primary-light) !important;
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover) !important;
+    border-color: #a4d2fb !important;
 }
 
 .truck-img-wrapper {
     position: relative;
-    height: 220px;
+    height: 230px;
     overflow: hidden;
     background: #dbe7f2;
 }
@@ -490,11 +559,11 @@ img {
     display: block !important;
     opacity: 1 !important;
     visibility: visible !important;
-    transition: transform 0.4s ease;
+    transition: transform 0.45s ease;
 }
 
 .truck-card:hover .truck-img-wrapper img {
-    transform: scale(1.05);
+    transform: scale(1.06);
 }
 
 .truck-badge {
@@ -502,24 +571,26 @@ img {
     top: 12px;
     right: 12px;
     background: rgba(10, 37, 64, 0.88);
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     color: #ffffff;
     font-size: 12px;
     font-weight: 700;
-    padding: 4px 10px;
+    padding: 5px 12px;
     border-radius: 20px;
     display: inline-flex;
     align-items: center;
-    gap: 5px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    gap: 6px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .truck-badge i {
-    color: var(--accent);
+    color: var(--accent-bright);
 }
 
 .truck-card-body {
-    padding: 18px;
+    padding: 20px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -527,7 +598,7 @@ img {
 }
 
 .truck-card-body h5 {
-    font-size: 18px;
+    font-size: 18.5px;
     font-weight: 800;
     color: var(--secondary) !important;
     margin-bottom: 8px;
@@ -536,15 +607,15 @@ img {
 .truck-card-body p {
     font-size: 14px;
     color: var(--muted-text) !important;
-    margin-bottom: 12px;
-    line-height: 1.5;
+    margin-bottom: 14px;
+    line-height: 1.55;
 }
 
 .truck-specs-list {
     list-style: none;
     padding: 0;
     margin: 0 0 16px 0;
-    font-size: 13px;
+    font-size: 13.5px;
     color: #334155 !important;
 }
 
@@ -552,7 +623,7 @@ img {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 6px;
+    margin-bottom: 7px;
 }
 
 .truck-specs-list li i {
@@ -566,7 +637,7 @@ img {
 .about-spotlight-img {
     border-radius: var(--radius-lg);
     overflow: hidden;
-    box-shadow: var(--shadow-3d-lg);
+    box-shadow: var(--shadow-lg);
     position: relative;
     background: #e2ecf5;
 }
@@ -578,77 +649,278 @@ img {
     display: block !important;
     opacity: 1 !important;
     visibility: visible !important;
+    transition: transform 0.4s ease;
+}
+
+.about-spotlight-img:hover img {
+    transform: scale(1.03);
 }
 
 .about-experience-badge {
     position: absolute;
     bottom: 20px;
     left: 20px;
-    background: rgba(0, 60, 130, 0.92);
-    backdrop-filter: blur(8px);
+    background: rgba(0, 48, 105, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.25);
     color: #ffffff;
-    padding: 14px 20px;
+    padding: 16px 22px;
     border-radius: var(--radius-md);
-    box-shadow: 0 8px 24px rgba(0, 70, 150, 0.35);
-    transform: perspective(600px) translateZ(10px);
+    box-shadow: 0 10px 28px rgba(0, 40, 100, 0.45);
     transition: var(--transition);
 }
 
 .about-experience-badge:hover {
-    transform: perspective(600px) translateY(-4px) translateZ(15px);
-    box-shadow: 0 12px 28px rgba(0, 112, 216, 0.45);
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(0, 112, 216, 0.5);
 }
 
 .about-experience-badge b {
-    font-size: 26px;
+    font-size: 28px;
     display: block;
-    color: var(--accent);
+    color: var(--accent-bright);
     line-height: 1;
+    margin-bottom: 2px;
 }
 
 .about-experience-badge span {
-    font-size: 12.5px;
-    color: #cfe0f5;
+    font-size: 13px;
+    color: #d6e8fc;
     font-weight: 600;
 }
 
 /* --------------------------------------------------------------------------
-   Interactive 3D Cold-Chain Telematics Showcase (Tasteful 3D Webpage Element)
-   CRITICAL: Text starting from 'Experience' & 'Explore' MUST be crisp WHITE!
+   "Why Partner With Us" Section - Upgraded High-Impact Design
    -------------------------------------------------------------------------- */
-.tps-3d-section {
-    background: radial-gradient(circle at 50% 25%, #0066cc 0%, #004b99 55%, #002d5a 100%);
-    color: #ffffff;
-    padding: 52px 0;
+.why-partner-section {
+    background: linear-gradient(180deg, #f7fbfe 0%, #eef6fd 50%, #f7fbfe 100%) !important;
+    padding: 60px 0;
+    position: relative;
+    border-top: 1px solid #d8e8f8;
+    border-bottom: 1px solid #d8e8f8;
+}
+
+.why-partner-pill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, rgba(0, 112, 216, 0.12) 0%, rgba(76, 184, 20, 0.12) 100%);
+    color: var(--primary);
+    border: 1px solid rgba(0, 112, 216, 0.28);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 30px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    box-shadow: 0 2px 8px rgba(0, 112, 216, 0.1);
+}
+
+.why-partner-card {
+    background: #ffffff !important;
+    border-radius: 18px;
+    border: 1px solid #d5e6f7 !important;
+    padding: 32px 24px 26px 24px;
+    height: 100%;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
     position: relative;
     overflow: hidden;
-    border-top: 2px solid rgba(41, 168, 255, 0.45);
-    border-bottom: 2px solid rgba(76, 184, 20, 0.45);
-    box-shadow: inset 0 2px 25px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 24px -4px rgba(0, 80, 170, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
-.tps-3d-section::before {
+.why-partner-card::before {
     content: "";
     position: absolute;
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 600px;
-    height: 250px;
-    background: radial-gradient(ellipse, rgba(0, 112, 216, 0.28) 0%, transparent 70%);
-    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4.5px;
+    background: linear-gradient(90deg, #0070d8, #4cb814);
+    transition: height 0.25s ease;
 }
 
-/* Headings starting from Experience and Explore - Strictly WHITE */
+.why-partner-card:hover {
+    transform: translateY(-8px);
+    border-color: #0070d8 !important;
+    box-shadow: 0 20px 42px -6px rgba(0, 112, 216, 0.22), 0 6px 16px rgba(0, 0, 0, 0.06) !important;
+}
+
+.why-partner-card:hover::before {
+    height: 7px;
+}
+
+.why-partner-step {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 26px;
+    font-weight: 900;
+    color: rgba(0, 112, 216, 0.14);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1;
+    pointer-events: none;
+    transition: color 0.25s ease;
+}
+
+.why-partner-card:hover .why-partner-step {
+    color: rgba(0, 112, 216, 0.3);
+}
+
+.why-partner-icon {
+    width: 62px;
+    height: 62px;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    font-size: 26px;
+    margin-bottom: 20px;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.why-partner-card:hover .why-partner-icon {
+    transform: scale(1.12) rotate(3deg);
+}
+
+.why-partner-icon.blue {
+    background: linear-gradient(135deg, #e7f2fd 0%, #cde5fc 100%);
+    color: #0070d8;
+    border: 1px solid rgba(0, 112, 216, 0.28);
+    box-shadow: 0 4px 14px rgba(0, 112, 216, 0.18);
+}
+
+.why-partner-icon.green {
+    background: linear-gradient(135deg, #e9f8ec 0%, #d1f5d6 100%);
+    color: #3aa80d;
+    border: 1px solid rgba(76, 184, 20, 0.32);
+    box-shadow: 0 4px 14px rgba(76, 184, 20, 0.2);
+}
+
+.why-partner-icon.cyan {
+    background: linear-gradient(135deg, #e1f8fc 0%, #c6f2f8 100%);
+    color: #0099a8;
+    border: 1px solid rgba(0, 153, 168, 0.28);
+    box-shadow: 0 4px 14px rgba(0, 153, 168, 0.18);
+}
+
+.why-partner-icon.purple {
+    background: linear-gradient(135deg, #efeaff 0%, #ded5fd 100%);
+    color: #5d3dc6;
+    border: 1px solid rgba(93, 61, 198, 0.28);
+    box-shadow: 0 4px 14px rgba(93, 61, 198, 0.18);
+}
+
+.why-partner-card h5 {
+    font-size: 19px;
+    font-weight: 800;
+    color: #0a2540 !important;
+    margin-bottom: 10px;
+    line-height: 1.3;
+    transition: color 0.2s ease;
+}
+
+.why-partner-card:hover h5 {
+    color: #0070d8 !important;
+}
+
+.why-partner-card p {
+    font-size: 14.5px;
+    color: #475569 !important;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    flex-grow: 1;
+}
+
+.why-partner-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    width: fit-content;
+}
+
+.why-partner-badge.blue {
+    background: rgba(0, 112, 216, 0.12);
+    color: #0070d8;
+    border: 1px solid rgba(0, 112, 216, 0.25);
+}
+
+.why-partner-badge.green {
+    background: rgba(76, 184, 20, 0.14);
+    color: #2b8408;
+    border: 1px solid rgba(76, 184, 20, 0.3);
+}
+
+.why-partner-badge.cyan {
+    background: rgba(0, 153, 168, 0.12);
+    color: #007c87;
+    border: 1px solid rgba(0, 153, 168, 0.25);
+}
+
+.why-partner-badge.purple {
+    background: rgba(93, 61, 198, 0.12);
+    color: #512da8;
+    border: 1px solid rgba(93, 61, 198, 0.25);
+}
+
+/* Partner Trust Value Strip */
+.why-partner-trust-strip {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 112, 216, 0.18);
+    border-radius: 16px;
+    padding: 18px 22px;
+    box-shadow: 0 4px 18px rgba(0, 70, 150, 0.08);
+}
+
+.trust-pill-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #0a2540;
+}
+
+.trust-pill-item i {
+    font-size: 17px;
+}
+
+/* --------------------------------------------------------------------------
+   Interactive 3D Cold-Chain Telematics Showcase
+   Headings starting from 'Experience' & 'Explore' strictly crisp WHITE
+   -------------------------------------------------------------------------- */
+.tps-3d-section {
+    background: radial-gradient(circle at 50% 25%, #0070d8 0%, #005bb5 55%, #004593 100%);
+    color: #ffffff;
+    padding: 56px 0;
+    position: relative;
+    overflow: hidden;
+    border-top: 2.5px solid rgba(41, 168, 255, 0.6);
+    border-bottom: 2.5px solid rgba(76, 184, 20, 0.6);
+    box-shadow: inset 0 2px 30px rgba(0, 0, 0, 0.25);
+}
+
 .tps-3d-title,
 .tps-3d-section h2 {
     color: #ffffff !important;
-    font-size: clamp(26px, 3.8vw, 40px) !important;
+    font-size: clamp(26px, 3.8vw, 42px) !important;
     font-weight: 800 !important;
-    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75) !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.85) !important;
     margin-bottom: 10px !important;
-    letter-spacing: -0.3px;
+    letter-spacing: -0.02em;
 }
 
 .tps-3d-desc,
@@ -656,35 +928,36 @@ img {
     color: #ffffff !important;
     font-size: clamp(15px, 1.8vw, 17.5px) !important;
     line-height: 1.6 !important;
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6) !important;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7) !important;
     opacity: 0.96 !important;
-    max-width: 720px;
-    margin: 0 auto 24px auto !important;
+    max-width: 740px;
+    margin: 0 auto 28px auto !important;
 }
 
 /* 3D Reefer Simulator Showcase Box */
 .reefer-3d-container {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 20px;
-    padding: 24px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
 .reefer-modes-wrap {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
-    margin-bottom: 24px;
+    gap: 12px;
+    margin-bottom: 28px;
 }
 
 .reefer-mode-btn {
     background: rgba(255, 255, 255, 0.08);
-    color: #cfe2f7;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 8px 16px;
+    color: #d6e8fc;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    padding: 9px 18px;
     border-radius: 30px;
     font-size: 13.5px;
     font-weight: 700;
@@ -693,10 +966,11 @@ img {
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    backdrop-filter: blur(6px);
 }
 
 .reefer-mode-btn:hover {
-    background: rgba(0, 112, 216, 0.3);
+    background: rgba(0, 112, 216, 0.35);
     color: #ffffff;
     border-color: var(--primary-light);
     transform: translateY(-2px);
@@ -706,205 +980,24 @@ img {
     background: linear-gradient(135deg, var(--primary), var(--accent));
     color: #ffffff;
     border-color: #ffffff;
-    box-shadow: 0 4px 14px rgba(76, 184, 20, 0.4);
-    transform: scale(1.03);
-}
-
-/* --------------------------------------------------------------------------
-   3D Truck Canvas Showcase & Viewport
-   -------------------------------------------------------------------------- */
-.truck-3d-viewport-card {
-    background: linear-gradient(145deg, rgba(0, 80, 165, 0.88), rgba(0, 42, 90, 0.96));
-    border: 1px solid rgba(41, 168, 255, 0.45);
-    border-radius: 18px;
-    padding: 16px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 16px 38px rgba(0, 20, 60, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.22);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    min-height: 480px;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.truck-3d-viewport-card:hover {
-    box-shadow: 0 20px 45px rgba(0, 20, 60, 0.55), 0 0 25px rgba(0, 112, 216, 0.35);
-}
-
-.truck-3d-topbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 10px;
-    z-index: 5;
-}
-
-.badge-3d-live {
-    background: rgba(0, 112, 216, 0.35);
-    color: #ffffff;
-    border: 1px solid rgba(41, 168, 255, 0.6);
-    font-size: 12.5px;
-    font-weight: 700;
-    padding: 6px 14px;
-    border-radius: 20px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-}
-
-.badge-3d-live .text-accent {
-    color: var(--accent-bright) !important;
-}
-
-.truck-3d-controls-mini {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.btn-3d-control {
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    color: #ffffff;
-    font-size: 11.5px;
-    font-weight: 700;
-    padding: 5px 12px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: var(--transition);
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.btn-3d-control:hover {
-    background: var(--primary);
-    border-color: #ffffff;
-    color: #ffffff;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 10px rgba(0, 112, 216, 0.35);
-}
-
-.truck-3d-canvas-wrapper {
-    position: relative;
-    width: 100%;
-    flex: 1;
-    min-height: 350px;
-    border-radius: 14px;
-    background: radial-gradient(circle at center 60%, rgba(0, 112, 216, 0.25) 0%, rgba(2, 20, 48, 0.75) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    overflow: hidden;
-    cursor: grab;
-    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.35);
-}
-
-.truck-3d-canvas-wrapper:active {
-    cursor: grabbing;
-}
-
-#tps3DTruckCanvas {
-    position: absolute;
-    inset: 0;
-    width: 100% !important;
-    height: 100% !important;
-    display: block;
-    outline: none;
-}
-
-.truck-3d-hint {
-    position: absolute;
-    bottom: 12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 30, 65, 0.85);
-    backdrop-filter: blur(6px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    color: #e2f0ff;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 5px 14px;
-    border-radius: 20px;
-    pointer-events: none;
-    white-space: nowrap;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
-    z-index: 4;
-}
-
-.subzero-vapor-badge {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background: rgba(0, 25, 55, 0.85);
-    backdrop-filter: blur(6px);
-    border: 1px solid rgba(41, 168, 255, 0.5);
-    color: #aae2ff;
-    font-size: 11.5px;
-    padding: 4px 12px;
-    border-radius: 16px;
-    pointer-events: none;
-    z-index: 4;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.subzero-vapor-badge i {
-    color: #6edff6;
-}
-
-.truck-view-angles-bar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-top: 12px;
-    padding-top: 8px;
-}
-
-.btn-angle {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #cfe2f7;
-    font-size: 12px;
-    font-weight: 600;
-    padding: 5px 13px;
-    border-radius: 16px;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.btn-angle:hover {
-    background: rgba(0, 112, 216, 0.35);
-    color: #ffffff;
-    border-color: var(--primary-light);
-}
-
-.btn-angle.active {
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    color: #ffffff;
-    border-color: #ffffff;
-    font-weight: 700;
-    box-shadow: 0 3px 10px rgba(76, 184, 20, 0.4);
+    box-shadow: 0 4px 18px rgba(76, 184, 20, 0.45);
+    transform: scale(1.04);
 }
 
 /* 3D Truck Reefer Display Card */
 .reefer-3d-card {
-    background: linear-gradient(145deg, rgba(0, 85, 170, 0.88), rgba(0, 42, 90, 0.96));
-    border: 1px solid rgba(41, 168, 255, 0.45);
-    border-radius: 16px;
-    padding: 24px;
+    background: linear-gradient(145deg, rgba(0, 112, 216, 0.95), rgba(0, 75, 155, 0.98));
+    border: 1px solid rgba(41, 168, 255, 0.6);
+    border-radius: var(--radius-md);
+    padding: 26px;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 16px 36px rgba(0, 20, 60, 0.48), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 18px 40px rgba(0, 70, 150, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transition: var(--transition);
 }
 
 .reefer-3d-card:hover {
-    box-shadow: 0 20px 42px rgba(0, 20, 60, 0.55), 0 0 22px rgba(0, 112, 216, 0.35);
+    box-shadow: 0 22px 46px rgba(0, 70, 150, 0.5), 0 0 25px rgba(0, 112, 216, 0.5);
 }
 
 .reefer-3d-header {
@@ -912,66 +1005,69 @@ img {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 16px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
     margin-bottom: 20px;
 }
 
 .telematics-pill {
     background: rgba(76, 184, 20, 0.22);
     color: var(--accent-bright);
-    border: 1px solid rgba(76, 184, 20, 0.5);
+    border: 1px solid rgba(76, 184, 20, 0.55);
     font-size: 12px;
     font-weight: 700;
-    padding: 5px 12px;
+    padding: 5px 13px;
     border-radius: 20px;
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 .temp-huge-gauge {
-    font-size: clamp(38px, 5.5vw, 54px);
+    font-size: clamp(40px, 6vw, 60px);
     font-weight: 900;
     color: var(--accent-bright);
-    text-shadow: 0 0 16px rgba(98, 216, 32, 0.5);
+    text-shadow: 0 0 22px rgba(98, 216, 32, 0.6), 0 0 8px rgba(98, 216, 32, 0.4);
     line-height: 1;
     margin: 10px 0;
     letter-spacing: -1px;
 }
 
 .cargo-active-title {
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 19px;
+    font-weight: 800;
     color: #ffffff;
     margin-bottom: 4px;
 }
 
 .cargo-active-sub {
-    font-size: 13px;
-    color: #a0c4ec;
+    font-size: 13.5px;
+    color: #a8d0fc;
 }
 
 .reefer-metrics-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     gap: 12px;
-    margin-top: 20px;
+    margin-top: 22px;
 }
 
 .reefer-metric-box {
-    background: rgba(0, 0, 0, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 10px 14px;
-    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 12px 14px;
+    border-radius: 12px;
     text-align: left;
+    backdrop-filter: blur(4px);
 }
 
 .reefer-metric-box small {
     display: block;
     font-size: 11px;
     text-transform: uppercase;
-    color: #8fb9e4;
-    letter-spacing: 0.5px;
+    color: #90c2f8;
+    letter-spacing: 0.6px;
+    margin-bottom: 2px;
 }
 
 .reefer-metric-box strong {
@@ -983,55 +1079,147 @@ img {
    CTA Section
    -------------------------------------------------------------------------- */
 .cta-sec {
-    background: linear-gradient(135deg, #005bb5 0%, #0070d8 50%, #004c99 100%);
+    background: linear-gradient(135deg, #0050a8 0%, #0070d8 50%, #004593 100%);
     color: #ffffff;
-    padding: 44px 0;
+    padding: 50px 0;
     text-align: center;
-    border-top: 2px solid rgba(76, 184, 20, 0.45);
-    box-shadow: 0 8px 24px rgba(0, 112, 216, 0.25);
+    border-top: 3px solid rgba(76, 184, 20, 0.6);
+    box-shadow: 0 10px 30px rgba(0, 112, 216, 0.28);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-sec::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.12) 0%, transparent 70%);
+    pointer-events: none;
 }
 
 .cta-sec h3 {
     color: #ffffff !important;
-    font-size: clamp(22px, 3vw, 32px);
+    font-size: clamp(24px, 3.2vw, 34px);
     font-weight: 800;
-    margin-bottom: 8px;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
 .cta-sec p {
-    font-size: 16px;
-    color: #dbe7f7 !important;
-    max-width: 650px;
-    margin: 0 auto 20px auto;
+    font-size: 16.5px;
+    color: #e0f0ff !important;
+    max-width: 680px;
+    margin: 0 auto 24px auto;
+    line-height: 1.6;
 }
 
 /* --------------------------------------------------------------------------
-   Social Media Icons & Clean Footer
+   Clean Footer & Social Media Icons
    -------------------------------------------------------------------------- */
+.footer {
+    background: linear-gradient(175deg, #005bb5 0%, #004791 50%, #003774 100%);
+    color: #ffffff;
+    padding: 54px 0 26px;
+    border-top: 3.5px solid var(--accent-bright);
+    box-shadow: inset 0 2px 25px rgba(0, 0, 0, 0.25);
+}
+
+.footer .container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+.footer-logo img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+}
+
+.footer p {
+    font-size: 14px;
+    line-height: 1.65;
+    margin-bottom: 18px;
+    color: #e6f2fd;
+}
+
+.footer h6 {
+    color: #ffffff;
+    font-size: 16.5px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    position: relative;
+    padding-bottom: 9px;
+    letter-spacing: -0.01em;
+}
+
+.footer h6::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 32px;
+    height: 2.5px;
+    background: var(--accent-bright);
+    border-radius: 2px;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #e6f2fd;
+}
+
+.footer ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-block;
+    opacity: 0.92;
+}
+
+.footer ul li a:hover {
+    color: var(--accent-bright);
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(98, 216, 32, 0.6);
+    transform: translateX(4px);
+}
+
 .footer-social-wrap {
     display: flex;
     flex-wrap: wrap;
-    gap: 9px;
-    margin-top: 14px;
-    margin-bottom: 18px;
+    gap: 10px;
+    margin-top: 16px;
+    margin-bottom: 20px;
 }
 
 .social-icon-btn {
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.15);
     color: #ffffff !important;
     display: grid;
     place-items: center;
     font-size: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     transition: var(--transition);
 }
 
 .social-icon-btn:hover {
-    transform: translateY(-3px);
+    transform: translateY(-3px) scale(1.08);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
 }
 
 .social-icon-btn.fb:hover { background: #1877f2; border-color: #1877f2; }
@@ -1042,14 +1230,59 @@ img {
 .social-icon-btn.wa:hover { background: #4cb814; border-color: #4cb814; }
 
 /* --------------------------------------------------------------------------
-   Gallery Page Filter & Grid - 100% Guaranteed Image Visibility
+   CRITICAL REQUIREMENT: Privacy Policy, Terms of Service, Sitemap in PURE WHITE
+   -------------------------------------------------------------------------- */
+.footer-legal-links,
+.footer .d-flex.gap-3 {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-legal-links a,
+.footer-legal-links .legal-link,
+.footer .d-flex.gap-3 a,
+.footer a.legal-link {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    letter-spacing: 0.2px;
+    opacity: 0.96;
+    transition: var(--transition);
+    padding: 3px 6px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.footer-legal-links a:hover,
+.footer-legal-links .legal-link:hover,
+.footer .d-flex.gap-3 a:hover,
+.footer a.legal-link:hover {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    text-decoration: underline !important;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.footer-legal-links span,
+.footer-legal-links .legal-sep,
+.footer .d-flex.gap-3 span,
+.footer span.legal-sep {
+    color: rgba(255, 255, 255, 0.75) !important;
+    font-size: 12px;
+    user-select: none;
+}
+
+/* --------------------------------------------------------------------------
+   Gallery Page Filter & Grid
    -------------------------------------------------------------------------- */
 .gallery-nav-pills {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    margin-bottom: 28px;
+    margin-bottom: 30px;
 }
 
 .gallery-nav-pills .filter-btn {
@@ -1058,7 +1291,7 @@ img {
     color: var(--secondary);
     font-weight: 700;
     font-size: 14px;
-    padding: 8px 20px;
+    padding: 9px 22px;
     border-radius: 30px;
     cursor: pointer;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
@@ -1070,14 +1303,15 @@ img {
     background: var(--primary);
     color: #ffffff;
     border-color: var(--primary);
-    box-shadow: 0 4px 12px rgba(0, 112, 216, 0.25);
+    box-shadow: 0 4px 14px rgba(0, 112, 216, 0.28);
+    transform: translateY(-1px);
 }
 
 .gallery-item-wrap {
     position: relative;
     border-radius: var(--radius-md);
     overflow: hidden;
-    box-shadow: var(--shadow-3d-sm);
+    box-shadow: var(--shadow-md);
     cursor: pointer;
     transition: var(--transition);
     background: #dbe7f2;
@@ -1091,22 +1325,22 @@ img {
     display: block !important;
     opacity: 1 !important;
     visibility: visible !important;
-    transition: transform 0.4s ease;
+    transition: transform 0.45s ease;
 }
 
 .gallery-item-wrap:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow-3d-lg);
+    box-shadow: var(--shadow-hover);
 }
 
 .gallery-item-wrap:hover img {
-    transform: scale(1.06);
+    transform: scale(1.08);
 }
 
 .gallery-item-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent 40%, rgba(0, 50, 110, 0.92) 100%);
+    background: linear-gradient(180deg, transparent 40%, rgba(0, 45, 100, 0.94) 100%);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -1122,7 +1356,7 @@ img {
 
 .gallery-item-overlay h6 {
     color: #ffffff !important;
-    font-size: 15px;
+    font-size: 15.5px;
     margin: 0;
     font-weight: 700;
 }
@@ -1139,16 +1373,16 @@ img {
     background: #ffffff !important;
     border-radius: var(--radius-md);
     border: 1px solid var(--border-color);
-    padding: 28px;
+    padding: 30px;
     height: 100%;
-    box-shadow: var(--shadow-3d-md);
+    box-shadow: var(--shadow-md);
 }
 
 .contact-info-card .info-row {
     display: flex;
     align-items: flex-start;
     gap: 16px;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 .contact-info-card .info-row:last-child {
@@ -1156,37 +1390,40 @@ img {
 }
 
 .contact-info-card .icon-box {
-    width: 46px;
-    height: 46px;
+    width: 48px;
+    height: 48px;
     border-radius: 12px;
-    background: #e8f4fd;
+    background: linear-gradient(135deg, #e8f4fd 0%, #d8ecfc 100%);
     color: var(--primary);
     display: grid;
     place-items: center;
     font-size: 20px;
     flex-shrink: 0;
     border: 1px solid rgba(0, 112, 216, 0.2);
+    box-shadow: 0 3px 10px rgba(0, 112, 216, 0.12);
 }
 
 .form-styled {
     background: #ffffff !important;
     border-radius: var(--radius-md);
     border: 1px solid var(--border-color);
-    padding: 30px;
-    box-shadow: var(--shadow-3d-md);
+    padding: 32px;
+    box-shadow: var(--shadow-md);
 }
 
 .form-styled .form-control,
 .form-styled .form-select {
-    padding: 10px 14px;
+    padding: 11px 16px;
     border-radius: var(--radius-sm);
     border: 1px solid #ced4da;
-    font-size: 14px;
-    color: #2d3748;
+    font-size: 14.5px;
+    color: #1e293b;
+    transition: var(--transition);
 }
 
 .form-styled .form-control:focus,
 .form-styled .form-select:focus {
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(0, 112, 216, 0.18);
+    box-shadow: 0 0 0 3px rgba(0, 112, 216, 0.2);
+    outline: none;
 }

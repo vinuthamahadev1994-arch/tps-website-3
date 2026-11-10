@@ -1,7 +1,7 @@
 /* ==========================================================================
    Total Procurement Solutions (TPS) - Dedicated Responsive Stylesheet
-   1.5s Preloader, Zero-Horizontal-Scroll, Why Partner With Us 3D Cards,
-   Mobile Friendly Navigation & Strict High-Contrast Visibility
+   Modern Mobile-First Design, 1.5s Preloader, Luxury Mobile Drawer Navigation,
+   App-Style Touch Depth & Strict High-Contrast Color Harmony
    ========================================================================== */
 
 /* Strict Viewport Protection using overflow-x: clip */
@@ -31,7 +31,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at center, #005cb8 0%, #003774 100%);
+    background: radial-gradient(circle at center, #0070d8 0%, #004ba3 100%);
     z-index: 999999;
     display: flex;
     flex-direction: column;
@@ -49,14 +49,14 @@ body {
 .preloader-brand-box {
     text-align: center;
     color: #ffffff;
-    padding: 20px;
+    padding: 24px;
 }
 
 .preloader-icon-wrap {
     position: relative;
-    width: 76px;
-    height: 76px;
-    margin: 0 auto 18px;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
     display: grid;
     place-items: center;
 }
@@ -72,23 +72,23 @@ body {
 }
 
 .preloader-truck-icon {
-    font-size: 28px;
+    font-size: 30px;
     color: #ffffff;
     animation: preloaderBounce 1.2s ease-in-out infinite;
 }
 
 .preloader-brand-title {
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 800;
     letter-spacing: 0.8px;
     color: #ffffff;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     text-transform: uppercase;
 }
 
 .preloader-brand-sub {
-    font-size: 12px;
-    color: #4cb814;
+    font-size: 12.5px;
+    color: #5edb24;
     font-weight: 700;
     letter-spacing: 0.8px;
 }
@@ -100,16 +100,16 @@ body {
 
 @keyframes preloaderBounce {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-4px); }
+    50% { transform: translateY(-5px); }
 }
 
 /* --------------------------------------------------------------------------
-   Sticky Floating WhatsApp & Back to Top (Always Clearly Visible)
+   Sticky Floating Action Group (WhatsApp & Back to Top)
    -------------------------------------------------------------------------- */
 .floating-actions-group {
     position: fixed !important;
-    right: 18px !important;
-    bottom: max(20px, calc(16px + env(safe-area-inset-bottom))) !important;
+    right: 20px !important;
+    bottom: max(22px, calc(18px + env(safe-area-inset-bottom))) !important;
     z-index: 9999 !important;
     display: flex;
     flex-direction: column;
@@ -119,22 +119,24 @@ body {
 }
 
 .wa-float {
-    width: 52px;
-    height: 52px;
+    width: 54px;
+    height: 54px;
     border-radius: 50%;
     background: #4cb814;
     color: #ffffff !important;
     display: grid;
     place-items: center;
-    font-size: 28px;
-    box-shadow: 0 4px 18px rgba(76, 184, 20, 0.55);
+    font-size: 29px;
+    box-shadow: 0 6px 20px rgba(76, 184, 20, 0.55);
     text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    position: relative;
 }
 
 .wa-float:hover {
-    transform: scale(1.08);
-    box-shadow: 0 6px 22px rgba(76, 184, 20, 0.7);
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 0 8px 26px rgba(76, 184, 20, 0.7);
 }
 
 .back-to-top {
@@ -147,9 +149,9 @@ body {
     place-items: center;
     font-size: 16px;
     border: 1px solid rgba(255, 255, 255, 0.35);
-    box-shadow: 0 4px 14px rgba(0, 112, 216, 0.4);
+    box-shadow: 0 4px 16px rgba(0, 112, 216, 0.45);
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.22s ease;
 }
 
 .back-to-top.show {
@@ -158,8 +160,8 @@ body {
 
 .back-to-top:hover {
     background: #0050a8;
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 6px 18px rgba(0, 112, 216, 0.6);
+    transform: translateY(-3px) scale(1.08);
+    box-shadow: 0 8px 20px rgba(0, 112, 216, 0.65);
 }
 
 /* --------------------------------------------------------------------------
@@ -170,7 +172,7 @@ body {
     flex-wrap: wrap;
     gap: 14px;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 22px;
     padding-top: 4px;
 }
 
@@ -189,36 +191,53 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   "Why Partner With Us" Section - High Contrast 3D Cards
+   "Why Partner With Us" Section - Bento-Style 3D Cards
    -------------------------------------------------------------------------- */
 .why-partner-section {
-    background: #f8fafc !important;
-    padding: 42px 0;
+    background: linear-gradient(180deg, #f7fbfe 0%, #eef6fd 50%, #f7fbfe 100%) !important;
+    padding: 60px 0;
     position: relative;
-    border-top: 1px solid #e2e8f0;
-    border-bottom: 1px solid #e2e8f0;
+    border-top: 1px solid #d8e8f8;
+    border-bottom: 1px solid #d8e8f8;
+}
+
+.why-partner-pill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, rgba(0, 112, 216, 0.12) 0%, rgba(76, 184, 20, 0.12) 100%);
+    color: #0070d8;
+    border: 1px solid rgba(0, 112, 216, 0.28);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 30px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    box-shadow: 0 2px 8px rgba(0, 112, 216, 0.1);
 }
 
 .why-partner-card {
     background: #ffffff !important;
-    border-radius: 14px;
-    border: 1px solid #dce7f5 !important;
-    padding: 24px 20px;
+    border-radius: 18px;
+    border: 1px solid #d5e6f7 !important;
+    padding: 32px 24px 26px 24px;
     height: 100%;
-    transition: all 0.25s ease-in-out;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     flex-direction: column;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 6px 18px rgba(10, 37, 64, 0.06) !important;
+    box-shadow: 0 8px 24px -4px rgba(0, 80, 170, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04) !important;
     opacity: 1 !important;
     visibility: visible !important;
 }
 
 .why-partner-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
     border-color: #0070d8 !important;
-    box-shadow: 0 12px 28px rgba(0, 112, 216, 0.15) !important;
+    box-shadow: 0 20px 42px -6px rgba(0, 112, 216, 0.22), 0 6px 16px rgba(0, 0, 0, 0.06) !important;
 }
 
 .why-partner-card::after {
@@ -227,75 +246,105 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 4px;
+    height: 4.5px;
     background: linear-gradient(90deg, #0070d8, #4cb814);
-    opacity: 1;
+    transition: height 0.22s ease;
+}
+
+.why-partner-card:hover::after {
+    height: 7px;
+}
+
+.why-partner-step {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 26px;
+    font-weight: 900;
+    color: rgba(0, 112, 216, 0.14);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1;
+    pointer-events: none;
+    transition: color 0.25s ease;
+}
+
+.why-partner-card:hover .why-partner-step {
+    color: rgba(0, 112, 216, 0.3);
 }
 
 .why-partner-icon {
-    width: 54px;
-    height: 54px;
-    border-radius: 12px;
+    width: 62px;
+    height: 62px;
+    border-radius: 16px;
     display: grid;
     place-items: center;
-    font-size: 22px;
-    margin-bottom: 16px;
-    transition: transform 0.25s ease;
+    font-size: 26px;
+    margin-bottom: 20px;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .why-partner-card:hover .why-partner-icon {
-    transform: scale(1.08);
+    transform: scale(1.12) rotate(3deg);
 }
 
 .why-partner-icon.blue {
-    background: #e8f3fe;
+    background: linear-gradient(135deg, #e7f2fd 0%, #cde5fc 100%);
     color: #0070d8;
-    border: 1px solid rgba(0, 112, 216, 0.25);
+    border: 1px solid rgba(0, 112, 216, 0.28);
+    box-shadow: 0 4px 14px rgba(0, 112, 216, 0.18);
 }
 
 .why-partner-icon.green {
-    background: #e9f8ec;
-    color: #4cb814;
-    border: 1px solid rgba(76, 184, 20, 0.3);
+    background: linear-gradient(135deg, #e9f8ec 0%, #d1f5d6 100%);
+    color: #3aa80d;
+    border: 1px solid rgba(76, 184, 20, 0.32);
+    box-shadow: 0 4px 14px rgba(76, 184, 20, 0.2);
 }
 
 .why-partner-icon.cyan {
-    background: #e0f7fa;
-    color: #0097a7;
-    border: 1px solid rgba(0, 151, 167, 0.25);
+    background: linear-gradient(135deg, #e1f8fc 0%, #c6f2f8 100%);
+    color: #0099a8;
+    border: 1px solid rgba(0, 153, 168, 0.28);
+    box-shadow: 0 4px 14px rgba(0, 153, 168, 0.18);
 }
 
 .why-partner-icon.purple {
-    background: #ede7f6;
-    color: #673ab7;
-    border: 1px solid rgba(103, 58, 183, 0.25);
+    background: linear-gradient(135deg, #efeaff 0%, #ded5fd 100%);
+    color: #5d3dc6;
+    border: 1px solid rgba(93, 61, 198, 0.28);
+    box-shadow: 0 4px 14px rgba(93, 61, 198, 0.18);
 }
 
 .why-partner-card h5 {
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 800;
     color: #0a2540 !important;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     line-height: 1.3;
+    transition: color 0.2s ease;
+}
+
+.why-partner-card:hover h5 {
+    color: #0070d8 !important;
 }
 
 .why-partner-card p {
-    font-size: 14px;
+    font-size: 14.5px;
     color: #475569 !important;
-    line-height: 1.55;
-    margin-bottom: 14px;
+    line-height: 1.6;
+    margin-bottom: 18px;
     flex-grow: 1;
 }
 
 .why-partner-badge {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    font-size: 11px;
+    gap: 7px;
+    font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.6px;
-    padding: 4px 10px;
+    padding: 6px 14px;
     border-radius: 20px;
     width: fit-content;
 }
@@ -303,114 +352,131 @@ body {
 .why-partner-badge.blue {
     background: rgba(0, 112, 216, 0.12);
     color: #0070d8;
+    border: 1px solid rgba(0, 112, 216, 0.25);
 }
 
 .why-partner-badge.green {
-    background: rgba(76, 184, 20, 0.15);
-    color: #389e0d;
+    background: rgba(76, 184, 20, 0.14);
+    color: #2b8408;
+    border: 1px solid rgba(76, 184, 20, 0.3);
 }
 
 .why-partner-badge.cyan {
-    background: rgba(0, 151, 167, 0.12);
-    color: #007785;
+    background: rgba(0, 153, 168, 0.12);
+    color: #007c87;
+    border: 1px solid rgba(0, 153, 168, 0.25);
 }
 
 .why-partner-badge.purple {
-    background: rgba(103, 58, 183, 0.12);
+    background: rgba(93, 61, 198, 0.12);
     color: #512da8;
+    border: 1px solid rgba(93, 61, 198, 0.25);
 }
 
-/* --------------------------------------------------------------------------
-   Clean Footer (Logo Blue Theme, Balanced 4 Columns)
-   -------------------------------------------------------------------------- */
-.footer {
-    background: linear-gradient(175deg, #004b99 0%, #002d5a 100%);
-    color: #e2eeff;
-    padding: 48px 0 24px;
-    border-top: 3px solid rgba(76, 184, 20, 0.5);
-    box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.2);
+/* Partner Trust Value Strip */
+.why-partner-trust-strip {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 112, 216, 0.18);
+    border-radius: 16px;
+    padding: 18px 22px;
+    box-shadow: 0 4px 18px rgba(0, 70, 150, 0.08);
 }
 
-.footer .container {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-.footer-logo {
-    display: inline-block;
-    margin-bottom: 14px;
-}
-
-.footer-logo img {
-    height: 48px;
-    width: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-}
-
-.footer p {
-    font-size: 13.5px;
-    line-height: 1.6;
-    margin-bottom: 16px;
-    color: #dbe7f7;
-}
-
-.footer h6 {
-    color: #ffffff;
-    font-size: 16px;
+.trust-pill-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 14px;
     font-weight: 700;
-    margin-bottom: 14px;
-    position: relative;
-    padding-bottom: 8px;
+    color: #0a2540;
 }
 
-.footer h6::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 28px;
-    height: 2px;
-    background: #4cb814;
-}
-
-.footer ul {
-    list-style: none;
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-.footer ul li {
-    margin-bottom: 8px;
-    font-size: 13.5px;
-    color: #dbe7f7;
-}
-
-.footer ul li a {
-    color: #c9e0fa;
-    text-decoration: none;
-    transition: all 0.2s ease;
-}
-
-.footer ul li a:hover {
-    color: #ffffff;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-    padding-left: 2px;
+.trust-pill-item i {
+    font-size: 17px;
 }
 
 /* --------------------------------------------------------------------------
-   Mobile Navbar Styling
+   Mobile Navbar Styling - Modern Mobile App Drawer Look
    -------------------------------------------------------------------------- */
 @media (max-width: 991.98px) {
+    .navbar.sticky-top {
+        padding: 8px 0 !important;
+    }
+
+    .navbar-collapse {
+        background: rgba(255, 255, 255, 0.98) !important;
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(0, 112, 216, 0.15);
+        border-radius: var(--radius-md);
+        padding: 16px 14px;
+        margin-top: 10px;
+        box-shadow: 0 15px 35px rgba(10, 37, 64, 0.18);
+    }
+
     .navbar-collapse .navbar-nav {
-        padding-top: 10px;
-        padding-bottom: 14px;
+        padding: 0;
     }
+
+    .navbar-nav .nav-item {
+        margin-bottom: 4px;
+    }
+
+    .navbar-nav .nav-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 15px;
+        font-weight: 600;
+        padding: 11px 16px !important;
+        border-radius: 10px;
+        color: #0a2540;
+    }
+
+    .navbar-nav .nav-link:hover {
+        background: rgba(0, 112, 216, 0.08);
+        color: var(--primary) !important;
+    }
+
+    .navbar-nav .nav-link.active {
+        background: linear-gradient(90deg, rgba(0, 112, 216, 0.12), rgba(76, 184, 20, 0.08));
+        color: var(--primary) !important;
+        font-weight: 700;
+    }
+
     .navbar-nav .nav-item-btn {
-        margin-top: 10px !important;
+        margin-top: 14px !important;
+        padding-top: 10px;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
     }
+
     .navbar-nav .nav-item-btn .btn {
         width: 100%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 18px;
+        font-size: 15px;
+        border-radius: 10px;
+    }
+
+    .mobile-nav-contact {
+        display: flex;
+        gap: 8px;
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .mobile-nav-contact .btn {
+        flex: 1;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 9px 8px;
+        border-radius: 8px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -421,139 +487,246 @@ body {
    Mobile View Adjustments (320px - 768px)
    -------------------------------------------------------------------------- */
 @media (max-width: 767.98px) {
-    .topbar {
-        font-size: 11px;
-        padding: 5px 0;
+    /* Prevent iOS auto-zoom on inputs */
+    input, select, textarea {
+        font-size: 16px !important;
     }
+
+    .topbar {
+        font-size: 11.5px;
+        padding: 6px 0;
+    }
+
     .topbar .container {
         justify-content: center !important;
         text-align: center;
         gap: 6px !important;
     }
+
     .topbar .container > div {
         justify-content: center !important;
         gap: 8px !important;
     }
+
     .navbar-brand img {
         height: 44px;
         width: auto;
     }
+
     .sec {
-        padding: 30px 0;
-    }
-    .sec.alt {
-        padding: 30px 0;
-    }
-    .sec-head {
-        margin-bottom: 20px;
-    }
-    .why-partner-section {
-        padding: 30px 0;
-    }
-    .tps-3d-section {
-        padding: 34px 0;
-    }
-    /* 3D Truck & 3D Telematics Responsive Enhancements */
-    .truck-3d-viewport-card {
-        min-height: 380px !important;
-        padding: 12px !important;
-        box-shadow: 0 12px 28px rgba(0, 15, 45, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
-        transform: perspective(800px) translateZ(0);
-        margin-bottom: 8px;
-    }
-    .truck-3d-canvas-wrapper {
-        min-height: 270px !important;
-        height: 270px !important;
-    }
-    .truck-3d-topbar {
-        font-size: 11px;
-    }
-    .badge-3d-live {
-        font-size: 11px;
-        padding: 4px 10px;
-    }
-    .btn-3d-control {
-        font-size: 10.5px;
-        padding: 4px 9px;
-    }
-    .btn-angle {
-        font-size: 11px;
-        padding: 4px 9px;
-    }
-    .truck-3d-hint {
-        font-size: 10px;
-        padding: 4px 10px;
-        bottom: 8px;
+        padding: 38px 0;
     }
 
-    /* 3D Elevation, Preserved Perspective & Tactile Depth on All Responsive Cards */
+    .sec.alt {
+        padding: 38px 0;
+    }
+
+    .sec-head {
+        margin-bottom: 24px;
+    }
+
+    .why-partner-section {
+        padding: 38px 0;
+    }
+
+    .tps-3d-section {
+        padding: 40px 0;
+    }
+
+    /* Modern 2x2 Stats Strip Layout on Mobile */
+    .stats-strip {
+        padding: 24px 0;
+    }
+
+    .stat-box {
+        padding: 14px 10px;
+        margin-bottom: 8px;
+    }
+
+    .stat-box b {
+        font-size: 28px;
+    }
+
+    .stat-box span.stat-label {
+        font-size: 11.5px;
+    }
+
+    /* High-Touch Mobile Cards */
     .card-s,
     .truck-card,
     .why-partner-card,
     .reefer-3d-card {
-        transform: perspective(800px) translateZ(0);
-        box-shadow: 0 8px 22px rgba(0, 70, 160, 0.14), 0 2px 8px rgba(0, 0, 0, 0.08) !important;
-        transition: transform 0.22s ease, box-shadow 0.22s ease !important;
-        -webkit-transform-style: preserve-3d;
-        transform-style: preserve-3d;
+        border-radius: var(--radius-md);
+        box-shadow: 0 6px 20px rgba(0, 70, 160, 0.1), 0 2px 6px rgba(0, 0, 0, 0.05) !important;
+        transition: transform 0.2s ease, box-shadow 0.2s ease !important;
     }
 
     .card-s:active,
     .truck-card:active,
     .why-partner-card:active,
     .reefer-3d-card:active {
-        transform: perspective(800px) translateY(-5px) scale(1.01) !important;
-        box-shadow: 0 14px 28px rgba(0, 112, 216, 0.28), 0 4px 10px rgba(0, 0, 0, 0.12) !important;
+        transform: scale(0.98) !important;
+        box-shadow: 0 10px 24px rgba(0, 112, 216, 0.2) !important;
+    }
+
+    .why-partner-card {
+        padding: 26px 20px 22px;
+    }
+
+    .why-partner-step {
+        font-size: 22px;
+        top: 14px;
+        right: 16px;
+    }
+
+    .why-partner-trust-strip {
+        padding: 14px 10px;
+        border-radius: 12px;
+    }
+
+    .trust-pill-item {
+        font-size: 11.5px;
+        gap: 6px;
+    }
+
+    .trust-pill-item i {
+        font-size: 14px;
     }
 
     /* 3D Tactile Buttons on Mobile */
     .btn-tps {
-        box-shadow: 0 4px 0 #378f0b, 0 6px 14px rgba(76, 184, 20, 0.35) !important;
+        box-shadow: 0 3px 0 #378f0b, 0 6px 14px rgba(76, 184, 20, 0.35) !important;
     }
+
     .btn-tps:active {
         transform: translateY(2px) !important;
-        box-shadow: 0 2px 0 #378f0b, 0 3px 8px rgba(76, 184, 20, 0.35) !important;
+        box-shadow: 0 1px 0 #378f0b, 0 3px 8px rgba(76, 184, 20, 0.35) !important;
     }
-    .stat-box b {
-        font-size: 26px;
-    }
-    .stat-box span.stat-label {
-        font-size: 11.5px;
-    }
+
     .reefer-3d-container {
-        padding: 16px;
+        padding: 18px 14px;
+        border-radius: var(--radius-md);
     }
+
     .temp-huge-gauge {
-        font-size: 40px;
+        font-size: 44px;
     }
+
     .reefer-modes-wrap {
-        gap: 6px;
+        gap: 8px;
+        margin-bottom: 20px;
     }
+
     .reefer-mode-btn {
         font-size: 12px;
-        padding: 6px 12px;
+        padding: 7px 14px;
+        flex: 1 1 calc(50% - 8px);
+        justify-content: center;
     }
+
+    .reefer-metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .reefer-metric-box {
+        padding: 10px 12px;
+    }
+
+    /* Mobile Gallery Pills - Smooth horizontal scrolling */
+    .gallery-nav-pills {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        justify-content: flex-start;
+        padding-bottom: 10px;
+        gap: 8px;
+        scrollbar-width: none;
+    }
+
+    .gallery-nav-pills::-webkit-scrollbar {
+        display: none;
+    }
+
+    .gallery-nav-pills .filter-btn {
+        flex-shrink: 0;
+        font-size: 13px;
+        padding: 7px 16px;
+        white-space: nowrap;
+    }
+
+    /* Mobile Floating Action Group */
     .floating-actions-group {
-        right: 14px !important;
-        bottom: max(16px, calc(14px + env(safe-area-inset-bottom))) !important;
+        right: 16px !important;
+        bottom: max(18px, calc(16px + env(safe-area-inset-bottom))) !important;
+        gap: 10px;
     }
+
     .wa-float {
-        width: 48px;
-        height: 48px;
-        font-size: 26px;
+        width: 50px;
+        height: 50px;
+        font-size: 27px;
     }
+
     .back-to-top {
-        width: 40px;
-        height: 40px;
+        width: 42px;
+        height: 42px;
         font-size: 15px;
+    }
+
+    /* Footer Mobile Enhancements - Centered & Highly Legible */
+    .footer {
+        padding: 42px 0 24px;
+        text-align: center;
+    }
+
+    .footer h6::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-social-wrap {
+        justify-content: center;
+    }
+
+    .footer-bottom-bar,
+    .footer .d-flex.flex-wrap.justify-content-between {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center;
+        gap: 14px !important;
+    }
+
+    .footer-legal-links,
+    .footer .d-flex.gap-3 {
+        justify-content: center !important;
+        flex-wrap: wrap;
+        gap: 12px !important;
+    }
+
+    .footer-legal-links a,
+    .footer .d-flex.gap-3 a {
+        font-size: 13px;
+        padding: 4px 8px;
+        color: #ffffff !important;
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
     .navbar-brand img {
-        height: 38px;
+        height: 40px;
     }
+
+    .topbar .badge-live {
+        display: none;
+    }
+
     .reefer-metrics-grid {
         grid-template-columns: 1fr;
+    }
+
+    .stat-box b {
+        font-size: 25px;
     }
 }
