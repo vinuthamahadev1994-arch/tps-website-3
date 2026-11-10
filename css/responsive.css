@@ -1,0 +1,559 @@
+/* ==========================================================================
+   Total Procurement Solutions (TPS) - Dedicated Responsive Stylesheet
+   1.5s Preloader, Zero-Horizontal-Scroll, Why Partner With Us 3D Cards,
+   Mobile Friendly Navigation & Strict High-Contrast Visibility
+   ========================================================================== */
+
+/* Strict Viewport Protection using overflow-x: clip */
+html,
+body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: clip !important;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   Preloader Animation - Exactly 1.5s Display Time (Vibrant TPS Logo Palette)
+   -------------------------------------------------------------------------- */
+#tpsPreloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #005cb8 0%, #003774 100%);
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+#tpsPreloader.loaded {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.preloader-brand-box {
+    text-align: center;
+    color: #ffffff;
+    padding: 20px;
+}
+
+.preloader-icon-wrap {
+    position: relative;
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 18px;
+    display: grid;
+    place-items: center;
+}
+
+.preloader-spinner-ring {
+    position: absolute;
+    inset: 0;
+    border: 3px solid rgba(0, 112, 216, 0.2);
+    border-top: 3px solid #0070d8;
+    border-right: 3px solid #4cb814;
+    border-radius: 50%;
+    animation: preloaderSpin 0.9s linear infinite;
+}
+
+.preloader-truck-icon {
+    font-size: 28px;
+    color: #ffffff;
+    animation: preloaderBounce 1.2s ease-in-out infinite;
+}
+
+.preloader-brand-title {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    color: #ffffff;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.preloader-brand-sub {
+    font-size: 12px;
+    color: #4cb814;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+@keyframes preloaderSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes preloaderBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+/* --------------------------------------------------------------------------
+   Sticky Floating WhatsApp & Back to Top (Always Clearly Visible)
+   -------------------------------------------------------------------------- */
+.floating-actions-group {
+    position: fixed !important;
+    right: 18px !important;
+    bottom: max(20px, calc(16px + env(safe-area-inset-bottom))) !important;
+    z-index: 9999 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    pointer-events: auto;
+}
+
+.wa-float {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #4cb814;
+    color: #ffffff !important;
+    display: grid;
+    place-items: center;
+    font-size: 28px;
+    box-shadow: 0 4px 18px rgba(76, 184, 20, 0.55);
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.wa-float:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 22px rgba(76, 184, 20, 0.7);
+}
+
+.back-to-top {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #0070d8;
+    color: #ffffff;
+    display: none;
+    place-items: center;
+    font-size: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 4px 14px rgba(0, 112, 216, 0.4);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.back-to-top.show {
+    display: grid;
+}
+
+.back-to-top:hover {
+    background: #0050a8;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 112, 216, 0.6);
+}
+
+/* --------------------------------------------------------------------------
+   Action Buttons Spacing Fix in About Section
+   -------------------------------------------------------------------------- */
+.about-actions-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 4px;
+}
+
+@media (max-width: 575.98px) {
+    .about-actions-group {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+    .about-actions-group .btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        margin: 0 !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   "Why Partner With Us" Section - High Contrast 3D Cards
+   -------------------------------------------------------------------------- */
+.why-partner-section {
+    background: #f8fafc !important;
+    padding: 42px 0;
+    position: relative;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.why-partner-card {
+    background: #ffffff !important;
+    border-radius: 14px;
+    border: 1px solid #dce7f5 !important;
+    padding: 24px 20px;
+    height: 100%;
+    transition: all 0.25s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(10, 37, 64, 0.06) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.why-partner-card:hover {
+    transform: translateY(-5px);
+    border-color: #0070d8 !important;
+    box-shadow: 0 12px 28px rgba(0, 112, 216, 0.15) !important;
+}
+
+.why-partner-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #0070d8, #4cb814);
+    opacity: 1;
+}
+
+.why-partner-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+    margin-bottom: 16px;
+    transition: transform 0.25s ease;
+}
+
+.why-partner-card:hover .why-partner-icon {
+    transform: scale(1.08);
+}
+
+.why-partner-icon.blue {
+    background: #e8f3fe;
+    color: #0070d8;
+    border: 1px solid rgba(0, 112, 216, 0.25);
+}
+
+.why-partner-icon.green {
+    background: #e9f8ec;
+    color: #4cb814;
+    border: 1px solid rgba(76, 184, 20, 0.3);
+}
+
+.why-partner-icon.cyan {
+    background: #e0f7fa;
+    color: #0097a7;
+    border: 1px solid rgba(0, 151, 167, 0.25);
+}
+
+.why-partner-icon.purple {
+    background: #ede7f6;
+    color: #673ab7;
+    border: 1px solid rgba(103, 58, 183, 0.25);
+}
+
+.why-partner-card h5 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0a2540 !important;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.why-partner-card p {
+    font-size: 14px;
+    color: #475569 !important;
+    line-height: 1.55;
+    margin-bottom: 14px;
+    flex-grow: 1;
+}
+
+.why-partner-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    width: fit-content;
+}
+
+.why-partner-badge.blue {
+    background: rgba(0, 112, 216, 0.12);
+    color: #0070d8;
+}
+
+.why-partner-badge.green {
+    background: rgba(76, 184, 20, 0.15);
+    color: #389e0d;
+}
+
+.why-partner-badge.cyan {
+    background: rgba(0, 151, 167, 0.12);
+    color: #007785;
+}
+
+.why-partner-badge.purple {
+    background: rgba(103, 58, 183, 0.12);
+    color: #512da8;
+}
+
+/* --------------------------------------------------------------------------
+   Clean Footer (Logo Blue Theme, Balanced 4 Columns)
+   -------------------------------------------------------------------------- */
+.footer {
+    background: linear-gradient(175deg, #004b99 0%, #002d5a 100%);
+    color: #e2eeff;
+    padding: 48px 0 24px;
+    border-top: 3px solid rgba(76, 184, 20, 0.5);
+    box-shadow: inset 0 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+.footer .container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 14px;
+}
+
+.footer-logo img {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.footer p {
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    color: #dbe7f7;
+}
+
+.footer h6 {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.footer h6::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 28px;
+    height: 2px;
+    background: #4cb814;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.footer ul li {
+    margin-bottom: 8px;
+    font-size: 13.5px;
+    color: #dbe7f7;
+}
+
+.footer ul li a {
+    color: #c9e0fa;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.footer ul li a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    padding-left: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Navbar Styling
+   -------------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+    .navbar-collapse .navbar-nav {
+        padding-top: 10px;
+        padding-bottom: 14px;
+    }
+    .navbar-nav .nav-item-btn {
+        margin-top: 10px !important;
+    }
+    .navbar-nav .nav-item-btn .btn {
+        width: 100%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile View Adjustments (320px - 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+    .topbar {
+        font-size: 11px;
+        padding: 5px 0;
+    }
+    .topbar .container {
+        justify-content: center !important;
+        text-align: center;
+        gap: 6px !important;
+    }
+    .topbar .container > div {
+        justify-content: center !important;
+        gap: 8px !important;
+    }
+    .navbar-brand img {
+        height: 44px;
+        width: auto;
+    }
+    .sec {
+        padding: 30px 0;
+    }
+    .sec.alt {
+        padding: 30px 0;
+    }
+    .sec-head {
+        margin-bottom: 20px;
+    }
+    .why-partner-section {
+        padding: 30px 0;
+    }
+    .tps-3d-section {
+        padding: 34px 0;
+    }
+    /* 3D Truck & 3D Telematics Responsive Enhancements */
+    .truck-3d-viewport-card {
+        min-height: 380px !important;
+        padding: 12px !important;
+        box-shadow: 0 12px 28px rgba(0, 15, 45, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+        transform: perspective(800px) translateZ(0);
+        margin-bottom: 8px;
+    }
+    .truck-3d-canvas-wrapper {
+        min-height: 270px !important;
+        height: 270px !important;
+    }
+    .truck-3d-topbar {
+        font-size: 11px;
+    }
+    .badge-3d-live {
+        font-size: 11px;
+        padding: 4px 10px;
+    }
+    .btn-3d-control {
+        font-size: 10.5px;
+        padding: 4px 9px;
+    }
+    .btn-angle {
+        font-size: 11px;
+        padding: 4px 9px;
+    }
+    .truck-3d-hint {
+        font-size: 10px;
+        padding: 4px 10px;
+        bottom: 8px;
+    }
+
+    /* 3D Elevation, Preserved Perspective & Tactile Depth on All Responsive Cards */
+    .card-s,
+    .truck-card,
+    .why-partner-card,
+    .reefer-3d-card {
+        transform: perspective(800px) translateZ(0);
+        box-shadow: 0 8px 22px rgba(0, 70, 160, 0.14), 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+        transition: transform 0.22s ease, box-shadow 0.22s ease !important;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+
+    .card-s:active,
+    .truck-card:active,
+    .why-partner-card:active,
+    .reefer-3d-card:active {
+        transform: perspective(800px) translateY(-5px) scale(1.01) !important;
+        box-shadow: 0 14px 28px rgba(0, 112, 216, 0.28), 0 4px 10px rgba(0, 0, 0, 0.12) !important;
+    }
+
+    /* 3D Tactile Buttons on Mobile */
+    .btn-tps {
+        box-shadow: 0 4px 0 #378f0b, 0 6px 14px rgba(76, 184, 20, 0.35) !important;
+    }
+    .btn-tps:active {
+        transform: translateY(2px) !important;
+        box-shadow: 0 2px 0 #378f0b, 0 3px 8px rgba(76, 184, 20, 0.35) !important;
+    }
+    .stat-box b {
+        font-size: 26px;
+    }
+    .stat-box span.stat-label {
+        font-size: 11.5px;
+    }
+    .reefer-3d-container {
+        padding: 16px;
+    }
+    .temp-huge-gauge {
+        font-size: 40px;
+    }
+    .reefer-modes-wrap {
+        gap: 6px;
+    }
+    .reefer-mode-btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+    .floating-actions-group {
+        right: 14px !important;
+        bottom: max(16px, calc(14px + env(safe-area-inset-bottom))) !important;
+    }
+    .wa-float {
+        width: 48px;
+        height: 48px;
+        font-size: 26px;
+    }
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    .navbar-brand img {
+        height: 38px;
+    }
+    .reefer-metrics-grid {
+        grid-template-columns: 1fr;
+    }
+}

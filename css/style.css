@@ -1,0 +1,1192 @@
+/* ==========================================================================
+   Total Procurement Solutions (TPS) - Main Stylesheet
+   Tasteful 3D Effects, Brand Logo Color Harmony (Royal Ice Blue & Electric Lime),
+   Guaranteed High-Contrast Visibility, Compact Spacing & Full Mobile Responsiveness
+   ========================================================================== */
+
+:root {
+    /* Brand Theme Colors matched directly from TPS 3D Logo */
+    --primary: #0070d8;              /* Royal Ice Blue from TPS logo text & snowflake */
+    --primary-dark: #0050a8;         /* Deep royal blue */
+    --primary-light: #29a8ff;        /* Vibrant ice blue */
+    --primary-glow: rgba(0, 112, 216, 0.35);
+
+    --accent: #4cb814;               /* Electric Lime Green from 'tp' and 's' letterforms */
+    --accent-bright: #62d820;        /* Vivid lime highlight */
+    --accent-dark: #378f0b;          /* Embossed 3D bevel bottom */
+    --accent-glow: rgba(76, 184, 20, 0.35);
+
+    --secondary: #0a2540;            /* Deep navy for prominent typography */
+    --secondary-dark: #071526;       /* Midnight marine for topbar and dark 3D hub */
+
+    --ice: #f2f8fc;                  /* Clean subtle cold-chain ice background */
+    --ice-border: #d2e4f3;           /* Crisp cold-chain border */
+    --dark: #061220;
+
+    --body-text: #2d3748;            /* High-contrast dark charcoal text */
+    --muted-text: #475569;           /* High-contrast slate */
+    --card-bg: #ffffff;
+    --border-color: #dbe5ee;
+
+    /* 3D Elevation & Lighting Shadows */
+    --shadow-3d-sm: 0 4px 10px rgba(10, 37, 64, 0.06), 0 1px 3px rgba(10, 37, 64, 0.04);
+    --shadow-3d-md: 0 10px 25px -4px rgba(10, 37, 64, 0.08), 0 4px 10px -2px rgba(10, 37, 64, 0.04);
+    --shadow-3d-lg: 0 20px 35px -5px rgba(10, 37, 64, 0.12), 0 8px 16px -4px rgba(10, 37, 64, 0.06);
+    --shadow-3d-glow: 0 0 20px rgba(76, 184, 20, 0.28);
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Global Resets & Typography */
+html {
+    scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--body-text);
+    background-color: #ffffff;
+    line-height: 1.6;
+    max-width: 100%;
+    overflow-x: clip;
+    position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--secondary);
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Subtitle Elimination: User requested NO sub-title */
+.badge-sub,
+.brand-subtitle,
+.sec-head .badge-sub {
+    display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   Top Bar
+   -------------------------------------------------------------------------- */
+.topbar {
+    background: linear-gradient(90deg, #003e80 0%, #0059b8 50%, #003e80 100%);
+    color: #e0eeff;
+    font-size: 13px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.topbar a {
+    color: #cfe0f5;
+    transition: var(--transition);
+}
+
+.topbar a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.topbar .badge-live {
+    background: rgba(76, 184, 20, 0.2);
+    color: #4cb814;
+    border: 1px solid rgba(76, 184, 20, 0.45);
+    font-size: 11px;
+    padding: 3px 9px;
+    border-radius: 20px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.topbar .badge-live .dot {
+    width: 7px;
+    height: 7px;
+    background: #4cb814;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #4cb814;
+    animation: pulseDot 1.6s infinite;
+}
+
+@keyframes pulseDot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+/* --------------------------------------------------------------------------
+   Navbar - Sticky on all responsive views with 3D glass effect
+   -------------------------------------------------------------------------- */
+.navbar.sticky-top {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1030 !important;
+    width: 100% !important;
+    background: #ffffff !important;
+    padding: 10px 0;
+    box-shadow: 0 4px 18px rgba(10, 37, 64, 0.07);
+    transition: box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.navbar.sticky-top.navbar-scrolled {
+    box-shadow: 0 6px 24px rgba(10, 37, 64, 0.13) !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-brand img {
+    height: 52px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
+    transition: transform 0.2s ease;
+}
+
+.navbar-brand:hover img {
+    transform: scale(1.03);
+}
+
+.navbar .nav-link {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--secondary);
+    padding: 8px 14px !important;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--primary) !important;
+    background-color: var(--ice);
+}
+
+/* --------------------------------------------------------------------------
+   3D Tactile Buttons (Embossed & Tasteful Depth matching TPS Logo)
+   -------------------------------------------------------------------------- */
+.btn-tps {
+    background: linear-gradient(180deg, #5ec926 0%, #43b310 100%);
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 14.5px;
+    padding: 9px 20px;
+    border-radius: var(--radius-sm);
+    border: 1px solid #369c09;
+    border-bottom: 3px solid #2b8006;
+    box-shadow: 0 4px 12px rgba(67, 179, 16, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    transition: all 0.18s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.btn-tps:hover {
+    background: linear-gradient(180deg, #68d62c 0%, #48c012 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(67, 179, 16, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+.btn-tps:active {
+    transform: translateY(1px);
+    border-bottom-width: 1px;
+    box-shadow: 0 2px 6px rgba(67, 179, 16, 0.3);
+}
+
+.btn-outline-tps {
+    background: #ffffff;
+    color: var(--primary) !important;
+    border: 2px solid var(--primary);
+    font-weight: 700;
+    font-size: 14.5px;
+    padding: 8px 18px;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 3px 8px rgba(0, 112, 216, 0.12);
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.btn-outline-tps:hover {
+    background: var(--primary);
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 112, 216, 0.28);
+}
+
+/* --------------------------------------------------------------------------
+   Page Header / Breadcrumb Hero
+   -------------------------------------------------------------------------- */
+.page-hero {
+    background: linear-gradient(135deg, #004593 0%, #0070d8 55%, #1ba0fc 100%);
+    color: #ffffff;
+    padding: 42px 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0, 112, 216, 0.18);
+}
+
+.page-hero h1 {
+    color: #ffffff;
+    font-size: clamp(26px, 3.8vw, 38px);
+    font-weight: 800;
+    margin-bottom: 6px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.page-hero .breadcrumb {
+    margin: 0;
+    font-size: 14px;
+}
+
+.page-hero a {
+    color: #aed1fc;
+}
+
+.page-hero a:hover {
+    color: #ffffff;
+}
+
+.breadcrumb-item.active {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   Sections & Headings - Compact Spacing as requested
+   -------------------------------------------------------------------------- */
+.sec {
+    padding: 42px 0;
+    position: relative;
+    background: #ffffff !important;
+    color: #2d3748 !important;
+}
+
+.sec.alt {
+    padding: 42px 0;
+    background: var(--ice) !important;
+    border-top: 1px solid var(--ice-border);
+    border-bottom: 1px solid var(--ice-border);
+    color: #2d3748 !important;
+}
+
+.sec-head {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 24px auto;
+}
+
+.sec-head h2 {
+    font-size: clamp(24px, 3.2vw, 34px);
+    font-weight: 800;
+    color: var(--secondary) !important;
+    margin-bottom: 8px;
+    letter-spacing: -0.3px;
+}
+
+.sec-head p {
+    font-size: 16px;
+    color: var(--muted-text) !important;
+    margin: 0;
+    line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   Stats Strip
+   -------------------------------------------------------------------------- */
+.stats-strip {
+    background: linear-gradient(135deg, #0050a8 0%, #0070d8 50%, #004593 100%);
+    color: #ffffff;
+    padding: 28px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 6px 20px rgba(0, 112, 216, 0.2);
+}
+
+.stat-box {
+    padding: 10px;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.stat-box b {
+    display: block;
+    font-size: clamp(26px, 3.2vw, 36px);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 4px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.stat-box b span.accent-text {
+    color: var(--accent);
+}
+
+.stat-box span.stat-label {
+    color: #cfe2f7;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+/* --------------------------------------------------------------------------
+   Cards & Service Items - Guaranteed 100% High-Contrast Visibility & 3D Depth
+   -------------------------------------------------------------------------- */
+.card-s {
+    background: #ffffff !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius-md);
+    padding: 24px 20px;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-3d-md) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.card-s::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    opacity: 1;
+}
+
+.card-s:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-3d-lg) !important;
+    border-color: var(--primary-light) !important;
+}
+
+.card-s .ico {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: #e8f4fd;
+    color: var(--primary);
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(0, 112, 216, 0.2);
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.8), 0 3px 8px rgba(0, 112, 216, 0.12);
+    transition: var(--transition);
+}
+
+.card-s:hover .ico {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #ffffff;
+    transform: scale(1.06);
+    box-shadow: 0 6px 14px rgba(0, 112, 216, 0.3);
+}
+
+.card-s h5 {
+    font-size: 18.5px;
+    font-weight: 800;
+    color: var(--secondary) !important;
+    margin-bottom: 8px;
+}
+
+.card-s p {
+    color: var(--muted-text) !important;
+    font-size: 14.5px;
+    line-height: 1.55;
+    margin-bottom: 14px;
+    flex-grow: 1;
+}
+
+.card-s .temp-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    background: #e6f7ec;
+    color: #278809;
+    border: 1px solid #c2eecf;
+    padding: 4px 10px;
+    border-radius: 12px;
+    width: fit-content;
+}
+
+/* --------------------------------------------------------------------------
+   Truck Fleet Showcase Cards - 100% Guaranteed Image & Text Visibility
+   -------------------------------------------------------------------------- */
+.truck-card {
+    background: #ffffff !important;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color) !important;
+    overflow: hidden;
+    transition: var(--transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-3d-md) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.truck-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-3d-lg) !important;
+    border-color: var(--primary-light) !important;
+}
+
+.truck-img-wrapper {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    background: #dbe7f2;
+}
+
+.truck-img-wrapper img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition: transform 0.4s ease;
+}
+
+.truck-card:hover .truck-img-wrapper img {
+    transform: scale(1.05);
+}
+
+.truck-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(10, 37, 64, 0.88);
+    backdrop-filter: blur(4px);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.truck-badge i {
+    color: var(--accent);
+}
+
+.truck-card-body {
+    padding: 18px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff !important;
+}
+
+.truck-card-body h5 {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--secondary) !important;
+    margin-bottom: 8px;
+}
+
+.truck-card-body p {
+    font-size: 14px;
+    color: var(--muted-text) !important;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.truck-specs-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px 0;
+    font-size: 13px;
+    color: #334155 !important;
+}
+
+.truck-specs-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.truck-specs-list li i {
+    color: var(--primary);
+    width: 16px;
+}
+
+/* --------------------------------------------------------------------------
+   About Feature Spotlight
+   -------------------------------------------------------------------------- */
+.about-spotlight-img {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-3d-lg);
+    position: relative;
+    background: #e2ecf5;
+}
+
+.about-spotlight-img img {
+    width: 100% !important;
+    height: 380px !important;
+    object-fit: cover !important;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.about-experience-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 60, 130, 0.92);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    padding: 14px 20px;
+    border-radius: var(--radius-md);
+    box-shadow: 0 8px 24px rgba(0, 70, 150, 0.35);
+    transform: perspective(600px) translateZ(10px);
+    transition: var(--transition);
+}
+
+.about-experience-badge:hover {
+    transform: perspective(600px) translateY(-4px) translateZ(15px);
+    box-shadow: 0 12px 28px rgba(0, 112, 216, 0.45);
+}
+
+.about-experience-badge b {
+    font-size: 26px;
+    display: block;
+    color: var(--accent);
+    line-height: 1;
+}
+
+.about-experience-badge span {
+    font-size: 12.5px;
+    color: #cfe0f5;
+    font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   Interactive 3D Cold-Chain Telematics Showcase (Tasteful 3D Webpage Element)
+   CRITICAL: Text starting from 'Experience' & 'Explore' MUST be crisp WHITE!
+   -------------------------------------------------------------------------- */
+.tps-3d-section {
+    background: radial-gradient(circle at 50% 25%, #0066cc 0%, #004b99 55%, #002d5a 100%);
+    color: #ffffff;
+    padding: 52px 0;
+    position: relative;
+    overflow: hidden;
+    border-top: 2px solid rgba(41, 168, 255, 0.45);
+    border-bottom: 2px solid rgba(76, 184, 20, 0.45);
+    box-shadow: inset 0 2px 25px rgba(0, 0, 0, 0.25);
+}
+
+.tps-3d-section::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 250px;
+    background: radial-gradient(ellipse, rgba(0, 112, 216, 0.28) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Headings starting from Experience and Explore - Strictly WHITE */
+.tps-3d-title,
+.tps-3d-section h2 {
+    color: #ffffff !important;
+    font-size: clamp(26px, 3.8vw, 40px) !important;
+    font-weight: 800 !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75) !important;
+    margin-bottom: 10px !important;
+    letter-spacing: -0.3px;
+}
+
+.tps-3d-desc,
+.tps-3d-section p {
+    color: #ffffff !important;
+    font-size: clamp(15px, 1.8vw, 17.5px) !important;
+    line-height: 1.6 !important;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6) !important;
+    opacity: 0.96 !important;
+    max-width: 720px;
+    margin: 0 auto 24px auto !important;
+}
+
+/* 3D Reefer Simulator Showcase Box */
+.reefer-3d-container {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    padding: 24px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.reefer-modes-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.reefer-mode-btn {
+    background: rgba(255, 255, 255, 0.08);
+    color: #cfe2f7;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.reefer-mode-btn:hover {
+    background: rgba(0, 112, 216, 0.3);
+    color: #ffffff;
+    border-color: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+.reefer-mode-btn.active {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: #ffffff;
+    border-color: #ffffff;
+    box-shadow: 0 4px 14px rgba(76, 184, 20, 0.4);
+    transform: scale(1.03);
+}
+
+/* --------------------------------------------------------------------------
+   3D Truck Canvas Showcase & Viewport
+   -------------------------------------------------------------------------- */
+.truck-3d-viewport-card {
+    background: linear-gradient(145deg, rgba(0, 80, 165, 0.88), rgba(0, 42, 90, 0.96));
+    border: 1px solid rgba(41, 168, 255, 0.45);
+    border-radius: 18px;
+    padding: 16px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 16px 38px rgba(0, 20, 60, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 480px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.truck-3d-viewport-card:hover {
+    box-shadow: 0 20px 45px rgba(0, 20, 60, 0.55), 0 0 25px rgba(0, 112, 216, 0.35);
+}
+
+.truck-3d-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    z-index: 5;
+}
+
+.badge-3d-live {
+    background: rgba(0, 112, 216, 0.35);
+    color: #ffffff;
+    border: 1px solid rgba(41, 168, 255, 0.6);
+    font-size: 12.5px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.badge-3d-live .text-accent {
+    color: var(--accent-bright) !important;
+}
+
+.truck-3d-controls-mini {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-3d-control {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-3d-control:hover {
+    background: var(--primary);
+    border-color: #ffffff;
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 112, 216, 0.35);
+}
+
+.truck-3d-canvas-wrapper {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    min-height: 350px;
+    border-radius: 14px;
+    background: radial-gradient(circle at center 60%, rgba(0, 112, 216, 0.25) 0%, rgba(2, 20, 48, 0.75) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    overflow: hidden;
+    cursor: grab;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+.truck-3d-canvas-wrapper:active {
+    cursor: grabbing;
+}
+
+#tps3DTruckCanvas {
+    position: absolute;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+    outline: none;
+}
+
+.truck-3d-hint {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 30, 65, 0.85);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #e2f0ff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 5px 14px;
+    border-radius: 20px;
+    pointer-events: none;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    z-index: 4;
+}
+
+.subzero-vapor-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(0, 25, 55, 0.85);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(41, 168, 255, 0.5);
+    color: #aae2ff;
+    font-size: 11.5px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    pointer-events: none;
+    z-index: 4;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.subzero-vapor-badge i {
+    color: #6edff6;
+}
+
+.truck-view-angles-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+    padding-top: 8px;
+}
+
+.btn-angle {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #cfe2f7;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 13px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-angle:hover {
+    background: rgba(0, 112, 216, 0.35);
+    color: #ffffff;
+    border-color: var(--primary-light);
+}
+
+.btn-angle.active {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: #ffffff;
+    border-color: #ffffff;
+    font-weight: 700;
+    box-shadow: 0 3px 10px rgba(76, 184, 20, 0.4);
+}
+
+/* 3D Truck Reefer Display Card */
+.reefer-3d-card {
+    background: linear-gradient(145deg, rgba(0, 85, 170, 0.88), rgba(0, 42, 90, 0.96));
+    border: 1px solid rgba(41, 168, 255, 0.45);
+    border-radius: 16px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 16px 36px rgba(0, 20, 60, 0.48), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.reefer-3d-card:hover {
+    box-shadow: 0 20px 42px rgba(0, 20, 60, 0.55), 0 0 22px rgba(0, 112, 216, 0.35);
+}
+
+.reefer-3d-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    margin-bottom: 20px;
+}
+
+.telematics-pill {
+    background: rgba(76, 184, 20, 0.22);
+    color: var(--accent-bright);
+    border: 1px solid rgba(76, 184, 20, 0.5);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.temp-huge-gauge {
+    font-size: clamp(38px, 5.5vw, 54px);
+    font-weight: 900;
+    color: var(--accent-bright);
+    text-shadow: 0 0 16px rgba(98, 216, 32, 0.5);
+    line-height: 1;
+    margin: 10px 0;
+    letter-spacing: -1px;
+}
+
+.cargo-active-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.cargo-active-sub {
+    font-size: 13px;
+    color: #a0c4ec;
+}
+
+.reefer-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.reefer-metric-box {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 14px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.reefer-metric-box small {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #8fb9e4;
+    letter-spacing: 0.5px;
+}
+
+.reefer-metric-box strong {
+    font-size: 14.5px;
+    color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   CTA Section
+   -------------------------------------------------------------------------- */
+.cta-sec {
+    background: linear-gradient(135deg, #005bb5 0%, #0070d8 50%, #004c99 100%);
+    color: #ffffff;
+    padding: 44px 0;
+    text-align: center;
+    border-top: 2px solid rgba(76, 184, 20, 0.45);
+    box-shadow: 0 8px 24px rgba(0, 112, 216, 0.25);
+}
+
+.cta-sec h3 {
+    color: #ffffff !important;
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 800;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cta-sec p {
+    font-size: 16px;
+    color: #dbe7f7 !important;
+    max-width: 650px;
+    margin: 0 auto 20px auto;
+}
+
+/* --------------------------------------------------------------------------
+   Social Media Icons & Clean Footer
+   -------------------------------------------------------------------------- */
+.footer-social-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 14px;
+    margin-bottom: 18px;
+}
+
+.social-icon-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff !important;
+    display: grid;
+    place-items: center;
+    font-size: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    transition: var(--transition);
+}
+
+.social-icon-btn:hover {
+    transform: translateY(-3px);
+}
+
+.social-icon-btn.fb:hover { background: #1877f2; border-color: #1877f2; }
+.social-icon-btn.tw:hover { background: #1da1f2; border-color: #1da1f2; }
+.social-icon-btn.in:hover { background: #0077b5; border-color: #0077b5; }
+.social-icon-btn.ig:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); border-color: transparent; }
+.social-icon-btn.yt:hover { background: #ff0000; border-color: #ff0000; }
+.social-icon-btn.wa:hover { background: #4cb814; border-color: #4cb814; }
+
+/* --------------------------------------------------------------------------
+   Gallery Page Filter & Grid - 100% Guaranteed Image Visibility
+   -------------------------------------------------------------------------- */
+.gallery-nav-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.gallery-nav-pills .filter-btn {
+    border: 1px solid var(--border-color);
+    background: #ffffff;
+    color: var(--secondary);
+    font-weight: 700;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.gallery-nav-pills .filter-btn:hover,
+.gallery-nav-pills .filter-btn.active {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+    box-shadow: 0 4px 12px rgba(0, 112, 216, 0.25);
+}
+
+.gallery-item-wrap {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-3d-sm);
+    cursor: pointer;
+    transition: var(--transition);
+    background: #dbe7f2;
+    height: 240px;
+}
+
+.gallery-item-wrap img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item-wrap:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-3d-lg);
+}
+
+.gallery-item-wrap:hover img {
+    transform: scale(1.06);
+}
+
+.gallery-item-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(0, 50, 110, 0.92) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 16px;
+    color: #ffffff;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.gallery-item-wrap:hover .gallery-item-overlay {
+    opacity: 1;
+}
+
+.gallery-item-overlay h6 {
+    color: #ffffff !important;
+    font-size: 15px;
+    margin: 0;
+    font-weight: 700;
+}
+
+.gallery-item-overlay span {
+    font-size: 12px;
+    color: var(--accent-bright);
+}
+
+/* --------------------------------------------------------------------------
+   Contact Info & Enquiry Forms
+   -------------------------------------------------------------------------- */
+.contact-info-card {
+    background: #ffffff !important;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    padding: 28px;
+    height: 100%;
+    box-shadow: var(--shadow-3d-md);
+}
+
+.contact-info-card .info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.contact-info-card .info-row:last-child {
+    margin-bottom: 0;
+}
+
+.contact-info-card .icon-box {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: #e8f4fd;
+    color: var(--primary);
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+    flex-shrink: 0;
+    border: 1px solid rgba(0, 112, 216, 0.2);
+}
+
+.form-styled {
+    background: #ffffff !important;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    box-shadow: var(--shadow-3d-md);
+}
+
+.form-styled .form-control,
+.form-styled .form-select {
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid #ced4da;
+    font-size: 14px;
+    color: #2d3748;
+}
+
+.form-styled .form-control:focus,
+.form-styled .form-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0, 112, 216, 0.18);
+}

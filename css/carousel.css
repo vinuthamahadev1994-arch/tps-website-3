@@ -1,0 +1,224 @@
+/* ==========================================================================
+   Total Procurement Solutions (TPS) - Dedicated Carousel Styles
+   Responsive, Smooth Transitions, No Text Overlap
+   ========================================================================== */
+
+#hero,
+#fleetCarousel {
+    position: relative;
+    background: #00376e;
+    overflow: hidden;
+}
+
+/* Individual Slide Items */
+.carousel-slide-item {
+    min-height: 580px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+}
+
+/* Multi-layer contrast overlay ensures crisp text readability over truck photos with slight logo blue tint */
+.carousel-slide-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 48, 105, 0.90) 0%,
+        rgba(0, 95, 185, 0.70) 50%,
+        rgba(0, 112, 216, 0.38) 100%
+    );
+    z-index: 1;
+}
+
+/* Slide background images */
+.slide-s1 {
+    background-image: url('../images/slide-1.jpg');
+}
+
+.slide-s2 {
+    background-image: url('../images/slide-2.jpg');
+}
+
+.slide-s3 {
+    background-image: url('../images/slide-3.jpg');
+}
+
+.slide-s4 {
+    background-image: url('../images/slide-4.jpg');
+}
+
+/* Content container */
+.carousel-slide-item .container {
+    position: relative;
+    z-index: 2;
+    padding-top: 50px;
+    padding-bottom: 60px;
+}
+
+.hero-cap {
+    max-width: 660px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: #e2eeff;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.hero-badge i {
+    color: #00b4d8;
+}
+
+.hero-cap h1,
+.hero-cap h2 {
+    color: #ffffff;
+    font-size: clamp(28px, 4.4vw, 50px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+}
+
+.hero-cap p {
+    font-size: clamp(15px, 1.8vw, 19px);
+    color: #dbe7f7;
+    margin-bottom: 26px;
+    line-height: 1.6;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+}
+
+.hero-feature-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.hero-feature-tag {
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+    color: #cfe0f5;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.hero-feature-tag i {
+    color: #4cb814;
+}
+
+/* Indicators */
+.carousel-indicators {
+    margin-bottom: 20px;
+    z-index: 5;
+}
+
+.carousel-indicators button {
+    width: 36px;
+    height: 4px;
+    border-radius: 2px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.4);
+    transition: all 0.25s ease-in-out;
+}
+
+.carousel-indicators button.active {
+    width: 50px;
+    background-color: #4cb814;
+}
+
+/* Arrows */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 52px;
+    height: 52px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(10, 37, 64, 0.6);
+    backdrop-filter: blur(4px);
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    margin: 0 20px;
+    opacity: 0.85;
+    z-index: 5;
+    transition: all 0.25s ease-in-out;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background: #0070d8;
+    opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+    .carousel-slide-item {
+        min-height: 480px;
+    }
+    .carousel-slide-item::before {
+        background: linear-gradient(
+            135deg,
+            rgba(0, 48, 105, 0.92) 0%,
+            rgba(0, 95, 185, 0.80) 60%,
+            rgba(0, 112, 216, 0.50) 100%
+        );
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .carousel-slide-item {
+        min-height: 430px;
+    }
+    .carousel-slide-item .container {
+        padding-top: 36px;
+        padding-bottom: 44px;
+    }
+    .hero-btn-group {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+    .hero-btn-group .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    .hero-feature-tags {
+        gap: 8px;
+    }
+    .hero-feature-tag {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+}
