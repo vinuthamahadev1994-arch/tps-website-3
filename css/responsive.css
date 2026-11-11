@@ -194,11 +194,11 @@ body {
    "Why Partner With Us" Section - Bento-Style 3D Cards
    -------------------------------------------------------------------------- */
 .why-partner-section {
-    background: linear-gradient(180deg, #f7fbfe 0%, #eef6fd 50%, #f7fbfe 100%) !important;
+    background: linear-gradient(160deg, #f0f9ef 0%, #e6f6e5 50%, #eef8ed 100%) !important;
     padding: 60px 0;
     position: relative;
-    border-top: 1px solid #d8e8f8;
-    border-bottom: 1px solid #d8e8f8;
+    border-top: 1px solid rgba(76, 184, 20, 0.28) !important;
+    border-bottom: 1px solid rgba(76, 184, 20, 0.32) !important;
 }
 
 .why-partner-pill-badge {
@@ -514,10 +514,23 @@ body {
     }
 
     .sec {
+        background: linear-gradient(180deg, #f0f6fc 0%, #e6f1fa 100%) !important;
         padding: 38px 0;
     }
 
-    .sec.alt {
+    .sec.alt,
+    .sect-alt,
+    .cargo-handling-sec {
+        background: linear-gradient(135deg, #d3f4ee 0%, #c4ece3 50%, #d8f6f1 100%) !important;
+        border-top: 1px solid rgba(0, 168, 150, 0.25) !important;
+        border-bottom: 1px solid rgba(0, 168, 150, 0.28) !important;
+        padding: 38px 0;
+    }
+
+    .fleet-trucks-sec {
+        background: linear-gradient(135deg, #05d9e0 0%, #07885b 50%, #def2fa 100%) !important;
+        border-top: 1px solid rgba(0, 112, 216, 0.18) !important;
+        border-bottom: 1px solid rgba(76, 184, 20, 0.22) !important;
         padding: 38px 0;
     }
 
@@ -525,7 +538,21 @@ body {
         margin-bottom: 24px;
     }
 
+    .truck-img-wrapper {
+        background: #ffffff !important;
+        height: 200px !important;
+        padding: 8px !important;
+    }
+
+    .truck-img-wrapper img {
+        object-fit: contain !important;
+        background: #ffffff !important;
+    }
+
     .why-partner-section {
+        background: linear-gradient(160deg, #f0f9ef 0%, #e6f6e5 50%, #eef8ed 100%) !important;
+        border-top: 1px solid rgba(76, 184, 20, 0.28) !important;
+        border-bottom: 1px solid rgba(76, 184, 20, 0.32) !important;
         padding: 38px 0;
     }
 
@@ -656,10 +683,14 @@ body {
         white-space: nowrap;
     }
 
-    /* Mobile Floating Action Group */
+    /* Mobile Floating Action Group (Positioned above sticky bottom nav bar) */
+    body {
+        padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px)) !important;
+    }
+
     .floating-actions-group {
         right: 16px !important;
-        bottom: max(18px, calc(16px + env(safe-area-inset-bottom))) !important;
+        bottom: max(76px, calc(70px + env(safe-area-inset-bottom))) !important;
         gap: 10px;
     }
 

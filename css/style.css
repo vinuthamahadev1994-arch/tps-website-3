@@ -344,15 +344,27 @@ img {
 .sec {
     padding: 52px 0;
     position: relative;
-    background: #ffffff !important;
+    background: linear-gradient(180deg, #f0f6fc 0%, #e6f1fa 100%) !important;
     color: var(--body-text) !important;
 }
 
-.sec.alt {
+.sec.alt,
+.sect-alt,
+.cargo-handling-sec {
     padding: 52px 0;
-    background: var(--ice) !important;
-    border-top: 1px solid var(--ice-border);
-    border-bottom: 1px solid var(--ice-border);
+    position: relative;
+    background: linear-gradient(135deg, #d3f4ee 0%, #c4ece3 50%, #d8f6f1 100%) !important;
+    border-top: 1px solid rgba(0, 168, 150, 0.25) !important;
+    border-bottom: 1px solid rgba(0, 168, 150, 0.28) !important;
+    color: var(--body-text) !important;
+}
+
+.fleet-trucks-sec {
+    padding: 52px 0;
+    position: relative;
+    background: linear-gradient(135deg, #05d9e0 0%, #07885b 50%, #def2fa 100%) !important;;
+    border-top: 1px solid rgba(0, 112, 216, 0.18) !important;
+    border-bottom: 1px solid rgba(76, 184, 20, 0.22) !important;
     color: var(--body-text) !important;
 }
 
@@ -549,13 +561,19 @@ img {
     position: relative;
     height: 230px;
     overflow: hidden;
-    background: #dbe7f2;
+    background: #ffffff !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-bottom: 1px solid #eef3f8;
 }
 
 .truck-img-wrapper img {
     width: 100% !important;
     height: 100% !important;
-    object-fit: cover !important;
+    object-fit: contain !important;
+    background: #ffffff !important;
     display: block !important;
     opacity: 1 !important;
     visibility: visible !important;
@@ -639,13 +657,19 @@ img {
     overflow: hidden;
     box-shadow: var(--shadow-lg);
     position: relative;
-    background: #e2ecf5;
+    background: #ffffff !important;
+    border: 1px solid #dbe7f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .about-spotlight-img img {
     width: 100% !important;
     height: 380px !important;
-    object-fit: cover !important;
+    object-fit: contain !important;
+    background: #ffffff !important;
+    padding: 12px;
     display: block !important;
     opacity: 1 !important;
     visibility: visible !important;
@@ -694,11 +718,11 @@ img {
    "Why Partner With Us" Section - Upgraded High-Impact Design
    -------------------------------------------------------------------------- */
 .why-partner-section {
-    background: linear-gradient(180deg, #f7fbfe 0%, #eef6fd 50%, #f7fbfe 100%) !important;
+    background: linear-gradient(160deg, #f0f9ef 0%, #e6f6e5 50%, #eef8ed 100%) !important;
     padding: 60px 0;
     position: relative;
-    border-top: 1px solid #d8e8f8;
-    border-bottom: 1px solid #d8e8f8;
+    border-top: 1px solid rgba(76, 184, 20, 0.28) !important;
+    border-bottom: 1px solid rgba(76, 184, 20, 0.32) !important;
 }
 
 .why-partner-pill-badge {
@@ -1426,4 +1450,73 @@ img {
     border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(0, 112, 216, 0.2);
     outline: none;
+}
+
+/* ==========================================================================
+   Sticky Mobile Bottom Navigation Bar (Home, About Us, Fleet Gallery, Contact)
+   ========================================================================== */
+.tps-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1040;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-top: 1px solid rgba(0, 112, 216, 0.18);
+    box-shadow: 0 -4px 20px rgba(10, 37, 64, 0.08);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 7px 8px calc(7px + env(safe-area-inset-bottom, 0px)) 8px;
+}
+
+.bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 600;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 4px 10px;
+    border-radius: 10px;
+    min-width: 68px;
+    position: relative;
+}
+
+.bottom-nav-item i {
+    font-size: 18px;
+    margin-bottom: 2px;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.bottom-nav-item:hover,
+.bottom-nav-item.active {
+    color: var(--primary) !important;
+}
+
+.bottom-nav-item.active i {
+    color: var(--primary) !important;
+    transform: scale(1.15);
+}
+
+.bottom-nav-item.active span {
+    font-weight: 800;
+    color: var(--primary) !important;
+}
+
+.bottom-nav-item.active::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 3px;
 }

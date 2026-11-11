@@ -38,19 +38,19 @@
 
 /* Slide background images */
 .slide-s1 {
-    background-image: url('../images/slide-1.jpg');
+    background-image: url('../images/Slide-1.png');
 }
 
 .slide-s2 {
-    background-image: url('../images/slide-2.jpg');
+    background-image: url('../images/Slide-2.png');
 }
 
 .slide-s3 {
-    background-image: url('../images/slide-3.jpg');
+    background-image: url('../images/Slide-3.png');
 }
 
 .slide-s4 {
-    background-image: url('../images/slide-4.jpg');
+    background-image: url('../images/Slide-4.png');
 }
 
 /* Content container */
@@ -287,4 +287,182 @@
         padding-top: 32px;
         padding-bottom: 44px;
     }
+}
+
+/* ==========================================================================
+   Dedicated Mobile Hero Carousel (Single Truck on Pure White Background)
+   Strictly NO background color (pure white #ffffff) for seamless presentation
+   ========================================================================== */
+#heroMobile,
+.hero-mobile-carousel {
+    background: #ffffff !important;
+    position: relative;
+    padding: 20px 0 24px 0;
+    border-bottom: 1px solid #e2edf7;
+    overflow: hidden;
+}
+
+#heroMobile .carousel-inner {
+    background: #ffffff !important;
+}
+
+#heroMobile .carousel-item {
+    background: #ffffff !important;
+}
+
+.hero-mobile-slide {
+    background: #ffffff !important;
+    padding: 6px 12px;
+}
+
+.hero-mobile-truck-wrap {
+    background: #ffffff !important;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto 16px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 180px;
+}
+
+.hero-mobile-truck-img {
+    max-height: 200px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    background: #ffffff !important;
+    filter: drop-shadow(0 12px 24px rgba(0, 75, 163, 0.15));
+    transition: transform 0.3s ease;
+}
+
+.hero-mobile-cap {
+    max-width: 480px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-mobile-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #eef6fd;
+    color: var(--primary);
+    border: 1px solid #cbe4fa;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 11.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.hero-mobile-badge i {
+    color: #4cb814;
+}
+
+.hero-mobile-title {
+    color: var(--secondary) !important;
+    font-size: clamp(21px, 5.6vw, 27px) !important;
+    font-weight: 900 !important;
+    line-height: 1.25;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+}
+
+.hero-mobile-text {
+    color: #475569 !important;
+    font-size: 14px;
+    line-height: 1.55;
+    margin-bottom: 18px;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-mobile-btns {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.hero-mobile-btns .btn {
+    padding: 10px 18px;
+    font-size: 13.5px;
+    font-weight: 700;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-mobile-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.hero-mobile-tag {
+    background: #f0f6fc;
+    border: 1px solid #d4e7f8;
+    color: #0050a8;
+    border-radius: 6px;
+    padding: 4px 9px;
+    font-size: 11px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.hero-mobile-tag i {
+    color: #4cb814;
+}
+
+/* Indicators for Mobile Hero */
+#heroMobile .carousel-indicators {
+    position: static;
+    margin: 16px auto 4px auto;
+    gap: 7px;
+}
+
+#heroMobile .carousel-indicators button {
+    width: 22px;
+    height: 4px;
+    border-radius: 3px;
+    background-color: #cbd5e1;
+    border: none;
+    opacity: 0.7;
+    transition: all 0.25s ease;
+}
+
+#heroMobile .carousel-indicators button.active {
+    width: 36px;
+    background-color: var(--primary);
+    opacity: 1;
+}
+
+#heroMobile .carousel-control-prev,
+#heroMobile .carousel-control-next {
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #cfe2f3;
+    border-radius: 50%;
+    top: 25%;
+    opacity: 0.9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 0 6px;
+}
+
+#heroMobile .carousel-control-prev-icon,
+#heroMobile .carousel-control-next-icon {
+    filter: invert(36%) sepia(91%) saturate(2314%) hue-rotate(193deg) brightness(91%) contrast(104%);
+    width: 16px;
+    height: 16px;
 }
