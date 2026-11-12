@@ -362,7 +362,7 @@ img {
 .fleet-trucks-sec {
     padding: 52px 0;
     position: relative;
-    background: linear-gradient(135deg, #05d9e0 0%, #07885b 50%, #def2fa 100%) !important;;
+    background: linear-gradient(135deg, #5a89ee 0%, #1433df 50%, #317fe6 100%) !important;
     border-top: 1px solid rgba(0, 112, 216, 0.18) !important;
     border-bottom: 1px solid rgba(76, 184, 20, 0.22) !important;
     color: var(--body-text) !important;
@@ -384,7 +384,8 @@ img {
 
 .sec-head p {
     font-size: 16px;
-    color: var(--muted-text) !important;
+    font-weight: 500;
+    color: var(--secondary) !important;
     margin: 0;
     line-height: 1.6;
 }
