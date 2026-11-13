@@ -549,6 +549,24 @@ body {
         background: #ffffff !important;
     }
 
+    .about-spotlight-img img {
+        height: 220px !important;
+        padding: 8px !important;
+    }
+
+    .gallery-item-wrap.fleet-inspect-card {
+        height: 135px !important;
+        padding: 6px !important;
+        background: #ffffff !important;
+    }
+
+    .gallery-item-wrap.fleet-inspect-card img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+        background: #ffffff !important;
+    }
+
     .why-partner-section {
         background: linear-gradient(160deg, #f0f9ef 0%, #e6f6e5 50%, #eef8ed 100%) !important;
         border-top: 1px solid rgba(76, 184, 20, 0.28) !important;
@@ -759,5 +777,15 @@ body {
 
     .stat-box b {
         font-size: 25px;
+    }
+
+    .gallery-item-wrap.fleet-inspect-card {
+        height: 115px !important;
+        padding: 5px !important;
+    }
+
+    .bottom-nav-item {
+        font-size: 10px !important;
+        padding: 4px 2px !important;
     }
 }

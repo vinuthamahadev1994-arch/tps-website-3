@@ -121,8 +121,9 @@ document.addEventListener("DOMContentLoaded", function () {
         triggers.forEach(function (trig) {
             trig.addEventListener("click", function (e) {
                 e.preventDefault();
-                var fullSrc = trig.getAttribute("data-img-src") || trig.querySelector("img").getAttribute("src");
-                var caption = trig.getAttribute("data-caption") || trig.querySelector("img").getAttribute("alt") || "TPS Cold Chain Truck";
+                var imgEl = trig.querySelector("img");
+                var fullSrc = (imgEl && imgEl.getAttribute("src")) || trig.getAttribute("data-img-src");
+                var caption = trig.getAttribute("data-caption") || (imgEl && imgEl.getAttribute("alt")) || "TPS Cold Chain Truck";
                 if (modalImg) modalImg.src = fullSrc;
                 if (modalCaption) modalCaption.textContent = caption;
                 

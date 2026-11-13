@@ -1362,6 +1362,28 @@ img {
     transform: scale(1.08);
 }
 
+/* Studio PNG Truck Cards inside Inspection Grids */
+.gallery-item-wrap.fleet-inspect-card {
+    background: #ffffff !important;
+    border: 1px solid var(--border-color);
+    height: 195px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-item-wrap.fleet-inspect-card img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    background: #ffffff !important;
+}
+
+.gallery-item-wrap.fleet-inspect-card:hover img {
+    transform: scale(1.04);
+}
+
 .gallery-item-overlay {
     position: absolute;
     inset: 0;
@@ -1483,9 +1505,11 @@ img {
     font-size: 11px;
     font-weight: 600;
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    padding: 4px 10px;
+    padding: 4px 4px;
     border-radius: 10px;
-    min-width: 68px;
+    min-width: 0;
+    flex: 1 1 0;
+    white-space: nowrap;
     position: relative;
 }
 
