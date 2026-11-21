@@ -735,7 +735,8 @@ body {
         transform: translateX(-50%);
     }
 
-    .footer-social-wrap {
+    .footer-social-wrap,
+    .footer-contact-icons {
         justify-content: center;
     }
 
@@ -787,5 +788,58 @@ body {
     .bottom-nav-item {
         font-size: 10px !important;
         padding: 4px 2px !important;
+    }
+}
+
+
+/* --------------------------------------------------------------------------
+   Policy Pages & Sitemap Mobile Enhancements
+   -------------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+    .policy-toc-card {
+        position: static !important;
+        top: 0 !important;
+        margin-bottom: 24px;
+    }
+    .policy-wrap {
+        padding: 26px 20px !important;
+    }
+    .policy-section h3 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .policy-wrap {
+        padding: 20px 14px !important;
+    }
+    .policy-section h3 {
+        font-size: 17.5px;
+        gap: 8px;
+    }
+    .policy-section h3 .sec-num {
+        width: 28px;
+        height: 28px;
+        font-size: 13px;
+    }
+    .policy-section p {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+    .policy-box-highlight,
+    .policy-box-warning {
+        padding: 14px 16px !important;
+    }
+    .policy-meta-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 12px 14px;
+    }
+    .sitemap-card {
+        padding: 20px 16px !important;
+    }
+    .sitemap-search-wrap {
+        padding: 16px 14px !important;
     }
 }
